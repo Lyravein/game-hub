@@ -1,0 +1,82 @@
+{
+  "gameId": "hsr",
+  "gameName": "Honkai: Star Rail",
+  "version": {},
+  "banners": [],
+  "events": [],
+  "news": [
+    {
+      "title": "Planar Fissure Event: Planar Ornaments Drop Rate Doubled for a Limited Time",
+      "url": "https://www.hoyolab.com/article/47043223",
+      "publishedAt": "2026-10-11T03:00:03.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version 4.6 \"Dance With the Beast Before Moonrise\" Update Details",
+      "url": "https://www.hoyolab.com/article/46861607",
+      "publishedAt": "2026-09-27T23:00:06.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version 4.6 Event Warp: Phase I",
+      "url": "https://www.hoyolab.com/article/46851682",
+      "publishedAt": "2026-09-27T06:00:04.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version 4.6 \"Nameless Honor\" Update",
+      "url": "https://www.hoyolab.com/article/46826146",
+      "publishedAt": "2026-09-25T03:30:06.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version 4.6 Update and Maintenance Notice",
+      "url": "https://www.hoyolab.com/article/46814308",
+      "publishedAt": "2026-09-24T06:00:08.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version 4.6 New Stage",
+      "url": "https://www.hoyolab.com/article/46814057",
+      "publishedAt": "2026-09-24T05:30:06.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "\"Dance With the Beast Before Moonrise\" Mission Description",
+      "url": "https://www.hoyolab.com/article/46813777",
+      "publishedAt": "2026-09-24T05:00:06.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "\"Currency Wars: Zero-Sum Game\" Ending Soon",
+      "url": "https://www.hoyolab.com/article/46793570",
+      "publishedAt": "2026-09-23T03:00:07.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version 4.6 Store Update",
+      "url": "https://www.hoyolab.com/article/46763312",
+      "publishedAt": "2026-09-20T12:15:04.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "\"Wishpower UP! Down with Voracity!\": Defeat enemies corroded by the Voracity to obtain Stellar Jades, Trendible Vouchers, and more rewards!",
+      "url": "https://www.hoyolab.com/article/46763206",
+      "publishedAt": "2026-09-20T12:10:04.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Astral Imagea Park: Obtain your very own Imageas and set up your Imagea Park",
+      "url": "https://www.hoyolab.com/article/46763108",
+      "publishedAt": "2026-09-20T12:05:04.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Realm of the Strange Event: Cavern Relic Drop Rate Doubled For a Limited Time",
+      "url": "https://www.hoyolab.com/article/46725571",
+      "publishedAt": "2026-09-17T04:00:06.000Z",
+      "category": "announcement"
+    }
+  ],
+  "syncedAt": "2026-10-18T13:03:23.680Z"
+}

@@ -1,0 +1,82 @@
+{
+  "gameId": "genshin",
+  "gameName": "Genshin Impact",
+  "version": {},
+  "banners": [],
+  "events": [],
+  "news": [
+    {
+      "title": "PlayStation®Store Payment System Maintenance Notice for the United Arab Emirates and Saudi Arabia",
+      "url": "https://www.hoyolab.com/article/46900541",
+      "publishedAt": "2026-09-30T07:15:04.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "V7.1 Known Issues & Update",
+      "url": "https://www.hoyolab.com/article/46794217",
+      "publishedAt": "2026-09-23T03:36:54.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "\"A Rekviem for the Underworld\" Version 7.1 Update Details",
+      "url": "https://www.hoyolab.com/article/46791577",
+      "publishedAt": "2026-09-22T23:00:02.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version 7.1 Update Maintenance Preview",
+      "url": "https://www.hoyolab.com/article/46771203",
+      "publishedAt": "2026-09-21T03:10:08.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Genshin Impact - Initial Top-Up Bonus Reset",
+      "url": "https://www.hoyolab.com/article/46701187",
+      "publishedAt": "2026-09-15T04:00:03.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "V7.0 Known Issues & Update",
+      "url": "https://www.hoyolab.com/article/46236390",
+      "publishedAt": "2026-08-12T03:29:54.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "\"Everwinter Without Mercy\" Version 7.0 Update Details",
+      "url": "https://www.hoyolab.com/article/46233468",
+      "publishedAt": "2026-08-11T23:00:03.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version 7.0 Update Maintenance Preview",
+      "url": "https://www.hoyolab.com/article/46208157",
+      "publishedAt": "2026-08-10T03:10:04.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Genshin Impact Version 7.0 Device Performance Requirements Preview",
+      "url": "https://www.hoyolab.com/article/45785814",
+      "publishedAt": "2026-07-09T04:10:05.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version Luna VIII Version Details - What's New",
+      "url": "https://www.hoyolab.com/article/45673007",
+      "publishedAt": "2026-07-01T04:05:01.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "\"Song of the Welkin Moon: Scherzo — Sunny Summer Fontinalia\": Version \"Luna VIII\" Update Details",
+      "url": "https://www.hoyolab.com/article/45670084",
+      "publishedAt": "2026-06-30T23:00:03.000Z",
+      "category": "announcement"
+    },
+    {
+      "title": "Version \"Luna VIII\" Update Maintenance Preview",
+      "url": "https://www.hoyolab.com/article/45647248",
+      "publishedAt": "2026-06-29T03:10:07.000Z",
+      "category": "announcement"
+    }
+  ],
+  "syncedAt": "2026-10-18T13:16:12.613Z"
+}

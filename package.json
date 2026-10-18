@@ -1,0 +1,20 @@
+{
+  "name": "game-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "test": "node --test tests/"
+  },
+  "devDependencies": {
+    "@fontsource/outfit": "^5.3.0"
+  },
+  "dependencies": {
+    "nuxt": "^3.21.11"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}
