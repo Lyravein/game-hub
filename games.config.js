@@ -1,6 +1,7 @@
 export default [
-  { id: 'genshin', name: 'Genshin Impact' },
-  { id: 'hsr', name: 'Honkai: Star Rail' },
   { id: 'zzz', name: 'Zenless Zone Zero' },
+  { id: 'arknights-endfield', name: 'Arknights: Endfield' },
   { id: 'arknights', name: 'Arknights' },
+  { id: 'wuthering-waves', name: 'Wuthering Waves' },
+  { id: 'nte', name: 'Neverness to Everness (NTE)' },
 ]

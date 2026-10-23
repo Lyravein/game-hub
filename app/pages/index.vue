@@ -1,12 +1,8 @@
 <script setup>
-const games = [
-  { id: 'genshin', name: 'Genshin Impact' },
-  { id: 'hsr', name: 'Honkai: Star Rail' },
-  { id: 'zzz', name: 'Zenless Zone Zero' },
-  { id: 'arknights', name: 'Arknights' },
-]
+import GAMES from '../../games.config.js'
+
 const { data, error } = await useFetch('/api/feed')
-const active = useState('active-game', () => games[0]?.id)
+const active = useState('active-game', () => GAMES[0]?.id)
 const feed = computed(() => data.value?.games?.find(g => g.gameId === active.value))
 const countdown = useCountdown()
 </script>
@@ -23,7 +19,7 @@ const countdown = useCountdown()
           <p>banners · events · rewards · news · next version</p>
           <div class="games">
             <button
-              v-for="g in games"
+              v-for="g in GAMES"
               :key="g.id"
               :class="{ active: g.id === active }"
               @click="active = g.id"

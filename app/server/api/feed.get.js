@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, existsSync } from 'node:fs'
+import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { validateFeed } from '../../shared/feed-schema.js'
 import GAMES from '../../../games.config.js'
