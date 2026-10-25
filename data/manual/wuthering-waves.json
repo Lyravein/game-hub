@@ -1,0 +1,42 @@
+{
+  "banners": [
+    {
+      "type": "character",
+      "name": "Power of Ten: Suoming",
+      "image": "https://hw-media-cdn-mingchao.kurogame.com/object/1792080000000/pschl2zbs6d2meg84m-1792137929039.jpg",
+      "startsAt": "2026-10-22T02:00:00.000Z",
+      "endsAt": "2026-11-11T03:59:00.000Z",
+      "featured": ["Suoming", "Lumi", "Danjin", "Chixia"]
+    },
+    {
+      "type": "weapon",
+      "name": "Absolute Pulsation: Unspoken Rue",
+      "startsAt": "2026-10-22T02:00:00.000Z",
+      "endsAt": "2026-11-11T03:59:00.000Z",
+      "featured": ["Unspoken Rue"]
+    }
+  ],
+  "events": [
+    {
+      "name": "Gifts of Grandeur (7-Day Login)",
+      "startsAt": "2026-10-22T02:00:00.000Z",
+      "endsAt": "2026-11-11T03:59:00.000Z",
+      "rewards": ["Radiant Tide x5", "Lustrous Tide x5"],
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653"
+    },
+    {
+      "name": "Depths of Illusive Realm: Dreams of Radiance",
+      "startsAt": "2026-10-15T02:00:00.000Z",
+      "endsAt": "2026-11-10T19:59:00.000Z",
+      "rewards": ["Astrite x1000", "Phantom Echo", "Premium Tuners"],
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653"
+    },
+    {
+      "name": "Ascendant Aces: Resonator Trial",
+      "startsAt": "2026-10-22T02:00:00.000Z",
+      "endsAt": "2026-11-11T03:59:00.000Z",
+      "rewards": ["Astrite x40", "Advanced Energy Core"],
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668"
+    }
+  ]
+}

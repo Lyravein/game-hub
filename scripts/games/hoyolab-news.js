@@ -6,6 +6,7 @@ export async function fetchNews({ fetchJson, gid, pageSize = 12 }) {
   return (data.data?.list ?? []).map(item => ({
     title: item.post?.subject ?? '(untitled)',
     url: `https://www.hoyolab.com/article/${item.post?.post_id}`,
+    image: item.cover_list?.[0]?.url || item.image_list?.[0]?.url || item.post?.cover || item.cover?.url || null,
     publishedAt: new Date(Number(item.post?.created_at ?? 0) * 1000).toISOString(),
     category: 'announcement',
   }))

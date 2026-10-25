@@ -11,8 +11,26 @@ const FETCH_TIMEOUT_MS = 20000
 export function mergeManual(feed, manual) {
   if (!manual || typeof manual !== 'object') return feed
   const out = structuredClone(feed)
-  for (const key of ['version', 'banners', 'events', 'news']) {
-    if (manual[key] !== undefined) out[key] = structuredClone(manual[key])
+  for (const key of ['version', 'events', 'news']) {
+    if (manual[key] !== undefined) {
+      if (Array.isArray(manual[key]) && manual[key].length > 0) {
+        out[key] = structuredClone(manual[key])
+      } else if (!Array.isArray(manual[key]) && typeof manual[key] === 'object' && Object.keys(manual[key]).length > 0) {
+        out[key] = structuredClone(manual[key])
+      }
+    }
+  }
+  if (Array.isArray(manual.banners) && manual.banners.length > 0) {
+    if (!out.banners || out.banners.length === 0) {
+      out.banners = structuredClone(manual.banners)
+    } else {
+      const names = new Set(out.banners.map(b => (b.name || '').toLowerCase()))
+      for (const mb of manual.banners) {
+        if (!names.has((mb.name || '').toLowerCase())) {
+          out.banners.push(structuredClone(mb))
+        }
+      }
+    }
   }
   return out
 }

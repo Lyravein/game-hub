@@ -1,82 +1,174 @@
 {
   "gameId": "zzz",
   "gameName": "Zenless Zone Zero",
-  "version": {},
-  "banners": [],
-  "events": [],
+  "version": {
+    "current": "3.3",
+    "next": {
+      "number": "3.4",
+      "startsAt": "2026-11-26T03:00:00.000Z"
+    }
+  },
+  "banners": [
+    {
+      "type": "character",
+      "name": "Into the Flames of Life",
+      "startsAt": "2026-10-19T06:00:08.000Z",
+      "endsAt": "2026-11-11T11:59:00.000Z",
+      "featured": [
+        "Phoenix"
+      ],
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/53161fb7a065d0d77b7e2a0b5f4954ab_2137834943334231194.png"
+    },
+    {
+      "type": "weapon",
+      "name": "Plume of Rebirth",
+      "startsAt": "2026-10-19T06:00:08.000Z",
+      "endsAt": "2026-11-11T11:59:00.000Z",
+      "featured": [
+        "Plume of Rebirth"
+      ],
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/953e970ff1219261858e83b974aae49c_1301481997602712761.png"
+    },
+    {
+      "type": "character",
+      "name": "Graceful Gale",
+      "startsAt": "2026-10-19T06:00:08.000Z",
+      "endsAt": "2026-11-11T11:59:00.000Z",
+      "featured": [
+        "Velina"
+      ],
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/ab52894afd4dadd30202f7732cdc6614_342236792291687595.png"
+    },
+    {
+      "type": "weapon",
+      "name": "Joyau Dore",
+      "startsAt": "2026-10-19T06:00:08.000Z",
+      "endsAt": "2026-11-11T11:59:00.000Z",
+      "featured": [
+        "Joyau Dore"
+      ],
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/65a233370b433c1b7d3126ad5155188b_2269549401582863875.png"
+    }
+  ],
+  "events": [
+    {
+      "name": "Spooky Funhouse Tales",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/b5f6ca3ec912bdf61e6a517ba7862229_8349168191072179160.png",
+      "startsAt": "2026-10-22T02:00:00.000Z",
+      "endsAt": "2026-11-30T03:59:00.000Z",
+      "rewards": [
+        "Polychrome x800",
+        "Candlelit Scheme W-Engine",
+        "Hamster Cage Pass x1"
+      ],
+      "url": "https://www.hoyolab.com/article/47142378"
+    },
+    {
+      "name": "All-New Program (7-Day Login)",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/f6fa5014416d1c86344d42034bd45f5b_4312829945717390906.png",
+      "startsAt": "2026-10-21T03:00:00.000Z",
+      "endsAt": "2026-12-01T03:59:00.000Z",
+      "rewards": [
+        "Encrypted Master Tape x10"
+      ],
+      "url": "https://www.hoyolab.com/article/47142288"
+    },
+    {
+      "name": "Data Bounty: Combat Simulation",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/d824455ce95fdb234359203ae02f7164_5515279548304941623.jpg",
+      "startsAt": "2026-10-14T04:00:00.000Z",
+      "endsAt": "2026-10-29T03:59:00.000Z",
+      "rewards": [
+        "Double Material Drops"
+      ],
+      "url": "https://www.hoyolab.com/article/47055658"
+    }
+  ],
   "news": [
     {
       "title": "Known Issues & Game Optimizations in Version 3.3 (Updating)",
       "url": "https://www.hoyolab.com/article/47150315",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/21/a4844a7383592f90ab0681e2fe02f557_2519251645562145079.png",
       "publishedAt": "2026-10-21T02:18:40.000Z",
       "category": "announcement"
     },
     {
       "title": "Version 3.3 \"Journey to the Sky\" Update Announcement",
       "url": "https://www.hoyolab.com/article/47149468",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/20/355a3540d3fb04046a0fca4316f21417_7637900535710854353.png",
       "publishedAt": "2026-10-20T23:00:04.000Z",
       "category": "announcement"
     },
     {
       "title": "\"Spooky Funhouse Tales\" Event Details",
       "url": "https://www.hoyolab.com/article/47142378",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/b5f6ca3ec912bdf61e6a517ba7862229_8349168191072179160.png",
       "publishedAt": "2026-10-20T06:30:04.000Z",
       "category": "announcement"
     },
     {
       "title": "\"All-New Program\" Event Details",
       "url": "https://www.hoyolab.com/article/47142288",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/f6fa5014416d1c86344d42034bd45f5b_4312829945717390906.png",
       "publishedAt": "2026-10-20T06:15:09.000Z",
       "category": "announcement"
     },
     {
       "title": "Version 3.3 New Eridu City Fund Details",
       "url": "https://www.hoyolab.com/article/47142214",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/3bc912c5f91e4e9e56ac7e7af73a0f0e_6444680103298310162.png",
       "publishedAt": "2026-10-20T06:00:07.000Z",
       "category": "announcement"
     },
     {
       "title": "New Main Story: Season 3 Chapter 4 \"Journey to the Sky\"",
       "url": "https://www.hoyolab.com/article/47131894",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/7ef83cb108e0c41c3123559d8b8025bb_6541886561330538562.png",
       "publishedAt": "2026-10-19T06:30:05.000Z",
       "category": "announcement"
     },
     {
       "title": "Version 3.3 New Stock in the Store",
       "url": "https://www.hoyolab.com/article/47131792",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/58a18d3a6788e6118f876814fe6cd474_1505581530204399272.png",
       "publishedAt": "2026-10-19T06:15:09.000Z",
       "category": "announcement"
     },
     {
       "title": "V3.3 Limited-Time Channels (Phase I)",
       "url": "https://www.hoyolab.com/article/47131668",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/e67c33b0ba514714f5850a4564adb59b_3518891644365885865.png",
       "publishedAt": "2026-10-19T06:00:08.000Z",
       "category": "announcement"
     },
     {
       "title": "Version 3.3 \"Journey to the Sky\" Pre-Download Available & Update Notice",
       "url": "https://www.hoyolab.com/article/47130875",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/40b65b9a043ef7997d777a6845c856e4_5045189417575171729.jpg",
       "publishedAt": "2026-10-19T04:05:05.000Z",
       "category": "announcement"
     },
     {
       "title": "\"Data Bounty: Combat Simulation\" Event Details",
       "url": "https://www.hoyolab.com/article/47055658",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/d824455ce95fdb234359203ae02f7164_5515279548304941623.jpg",
       "publishedAt": "2026-10-12T04:00:06.000Z",
       "category": "announcement"
     },
     {
       "title": "Notice Regarding Adjustments to the Existing Zenless Zone Zero × Discord Account Linking Service",
       "url": "https://www.hoyolab.com/article/47034890",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/09/7519fb11d551f379b7d9ebd34af0eca9_1111798782624595132.png",
       "publishedAt": "2026-10-10T10:00:02.000Z",
       "category": "announcement"
     },
     {
       "title": "\"Chronicles of the Hobbling Crow\" Event Details",
       "url": "https://www.hoyolab.com/article/46913357",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/25/bcbfe113e368482b715768b810ec680e_1185313513823374146.jpg",
       "publishedAt": "2026-10-01T04:00:06.000Z",
       "category": "announcement"
     }
   ],
-  "syncedAt": "2026-10-23T02:03:22.655Z"
+  "syncedAt": "2026-10-25T12:27:42.618Z"
 }
