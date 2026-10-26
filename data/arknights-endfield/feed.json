@@ -1,9 +1,212 @@
 {
   "gameId": "arknights-endfield",
   "gameName": "Arknights: Endfield",
-  "version": {},
-  "banners": [],
-  "events": [],
-  "news": [],
-  "syncedAt": "2026-10-23T02:03:24.970Z"
+  "version": {
+    "current": "Sanctuary of Ink",
+    "next": {
+      "number": "TBA",
+      "startsAt": "2026-11-19T03:59:00.000Z"
+    }
+  },
+  "banners": [
+    {
+      "type": "character",
+      "name": "[Rejuvenation] Chartered Headhunting",
+      "startsAt": "2026-10-15T04:00:00.000Z",
+      "endsAt": "2026-11-05T03:59:00.000Z",
+      "featured": [
+        "Si"
+      ],
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/c9e7aee99096e8ddc164a35c095762d7.jpg"
+    },
+    {
+      "type": "weapon",
+      "name": "[Seal of Jade Issue] Arsenal Issue",
+      "startsAt": "2026-10-15T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "featured": [
+        "Jade Vessel (Greatsword)"
+      ],
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/ae4a0d5301f2ecd124be805ebd31d30f.jpg"
+    },
+    {
+      "type": "character",
+      "name": "[Ancestral Spring Flows Anew] RE-Factor Headhunting #1",
+      "startsAt": "2026-10-29T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "featured": [
+        "Tangtang"
+      ]
+    },
+    {
+      "type": "weapon",
+      "name": "[Tender Sprig Issue] RE-Factor Issue #1",
+      "startsAt": "2026-10-29T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "featured": [
+        "Brigand's Calling (Handcannon)"
+      ]
+    },
+    {
+      "type": "character",
+      "name": "[The Hearth Fire Beckons the Starry Flow] Chartered Headhunting",
+      "startsAt": "2026-11-05T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "featured": [
+        "Argent Flow"
+      ]
+    },
+    {
+      "type": "weapon",
+      "name": "[Moongleam Issue] Arsenal Issue",
+      "startsAt": "2026-11-05T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "featured": [
+        "Lunar Calling (Sword)"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "Yuanyuan's Blazing Stoves",
+      "startsAt": "2026-10-15T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "rewards": [
+        "Oroberyl x1000"
+      ]
+    },
+    {
+      "name": "Spirit's Restoration",
+      "startsAt": "2026-10-15T04:00:00.000Z",
+      "endsAt": "2026-11-05T03:59:00.000Z",
+      "rewards": [
+        "Spirit's Restoration HH Permit x5"
+      ]
+    },
+    {
+      "name": "All the Inky Hues",
+      "startsAt": "2026-10-15T04:00:00.000Z",
+      "endsAt": "2026-11-05T04:00:00.000Z",
+      "rewards": [
+        "Oroberyl x1200"
+      ]
+    },
+    {
+      "name": "Carly's Verdant Anthology",
+      "startsAt": "2026-10-22T04:00:00.000Z",
+      "endsAt": "2026-11-04T20:00:00.000Z",
+      "rewards": [
+        "Oroberyl x1500"
+      ]
+    },
+    {
+      "name": "Contingency Readiness",
+      "startsAt": "2026-10-28T20:00:00.000Z",
+      "endsAt": "2026-11-04T20:00:00.000Z",
+      "rewards": []
+    },
+    {
+      "name": "Arena of Games",
+      "startsAt": "2026-10-29T04:00:00.000Z",
+      "endsAt": "2026-11-18T20:00:00.000Z",
+      "rewards": [
+        "Oroberyl x1200"
+      ]
+    },
+    {
+      "name": "New Era for the Myriad Souls",
+      "startsAt": "2026-10-31T04:00:00.000Z",
+      "endsAt": "2026-11-13T20:00:00.000Z",
+      "rewards": [
+        "Oroberyl x300"
+      ]
+    },
+    {
+      "name": "The Stars Are With Me",
+      "startsAt": "2026-11-05T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "rewards": [
+        "The Stars Are With Me HH Permit x5"
+      ]
+    },
+    {
+      "name": "Sanity Supply",
+      "startsAt": "2026-10-15T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "rewards": []
+    }
+  ],
+  "news": [
+    {
+      "title": "Arknights: Endfield Steam Client Account Linking Guide",
+      "url": "https://endfield.gryphline.com/en-us/news/5206",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261017/32a62b6e1e4d81845047309d7024667f.png",
+      "publishedAt": "2026-10-17T09:00:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "Arknights: Endfield WhatsApp Account Linking Reward Feature Now Available!",
+      "url": "https://endfield.gryphline.com/en-us/news/0743",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261013/8b3ad5281766686b665c0cffbc466dd0.png",
+      "publishedAt": "2026-10-16T04:00:00.000Z",
+      "category": "events"
+    },
+    {
+      "title": "[Sanctuary of Ink] Version Update Notes",
+      "url": "https://endfield.gryphline.com/en-us/news/9560",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
+      "publishedAt": "2026-10-15T01:00:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "Arknights: Endfield Is Now Officially Available on Steam!",
+      "url": "https://endfield.gryphline.com/en-us/news/3837",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261014/be8cb7db7c9e1f307acf5c0caae546e7.jpg",
+      "publishedAt": "2026-10-14T12:00:00.000Z",
+      "category": "events"
+    },
+    {
+      "title": "[Seal of Jade Issue] LTO Details",
+      "url": "https://endfield.gryphline.com/en-us/news/2652",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/ae4a0d5301f2ecd124be805ebd31d30f.jpg",
+      "publishedAt": "2026-10-14T10:30:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "[Rejuvenation] Chartered Headhunting",
+      "url": "https://endfield.gryphline.com/en-us/news/4489",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/c9e7aee99096e8ddc164a35c095762d7.jpg",
+      "publishedAt": "2026-10-14T10:00:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "Official Comic [Echoes of the Beginning: Manor's Origin] Is Live",
+      "url": "https://endfield.gryphline.com/en-us/news/4488",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261013/5ecf9c6fcf699d326c39c3d40c3e9aa0.jpg",
+      "publishedAt": "2026-10-14T02:50:00.000Z",
+      "category": "news"
+    },
+    {
+      "title": "[Sanctuary of Ink] Version Pre-Download & Update Notice",
+      "url": "https://endfield.gryphline.com/en-us/news/0744",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/6522503e31c3e8aa7cecc1fc9c19f2e8.jpg",
+      "publishedAt": "2026-10-13T04:00:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "Discord Game Stats Widget Updates",
+      "url": "https://endfield.gryphline.com/en-us/news/8995",
+      "image": "https://web-static.hg-cdn.com/upload/image/20260929/bb6f7295bb70622326428711d1e36134.png",
+      "publishedAt": "2026-10-08T10:30:00.000Z",
+      "category": "news"
+    },
+    {
+      "title": "[Sanctuary of Ink] New Version Guide Page Release Details",
+      "url": "https://endfield.gryphline.com/en-us/news/5207",
+      "image": "https://web-static.hg-cdn.com/upload/image/20260929/ff2c4bbc0c5283e6d1d0dafd92fbf304.png",
+      "publishedAt": "2026-10-06T12:00:00.000Z",
+      "category": "notices"
+    }
+  ],
+  "syncedAt": "2026-10-26T10:51:48.533Z"
 }

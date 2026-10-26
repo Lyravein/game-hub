@@ -57,7 +57,9 @@ function bannerCountdown (b) {
 }
 
 function getArtFallback (img) {
-  return img || `/game-hub/art/${active.value}.jpg`
+  if (!img) return `/game-hub/art/${active.value}.jpg`
+  // Remote art is proxied: game CDNs reject hotlinked <img> requests.
+  return img.startsWith('http') ? `/game-hub/api/img?u=${encodeURIComponent(img)}` : img
 }
 
 function onImgError (e) {
@@ -95,7 +97,7 @@ function onImgError (e) {
               v-if="feed.version?.next?.startsAt"
               class="next-version"
               :style="{
-                backgroundImage: `linear-gradient(90deg, rgba(6, 10, 18, 0.92) 0%, rgba(11, 18, 32, 0.72) 45%, rgba(6, 10, 18, 0.88) 100%), url('${feed.version.image || `/game-hub/art/${active}.jpg`}')`
+                backgroundImage: `linear-gradient(90deg, rgba(6, 10, 18, 0.92) 0%, rgba(11, 18, 32, 0.72) 45%, rgba(6, 10, 18, 0.88) 100%), url('${getArtFallback(feed.version.image)}')`
               }"
             >
               <span class="ver-label">Upcoming Version Update</span>

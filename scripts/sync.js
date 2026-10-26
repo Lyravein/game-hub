@@ -41,6 +41,12 @@ export async function fetchJson(url) {
   return res.json()
 }
 
+export async function fetchText(url) {
+  const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS), headers: { 'user-agent': 'game-hub-sync/0.1' } })
+  if (!res.ok) throw new Error(`${res.status} ${url}`)
+  return res.text()
+}
+
 function loadManual(id) {
   const p = join(DATA_DIR, 'manual', `${id}.json`)
   return existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null
@@ -48,7 +54,7 @@ function loadManual(id) {
 
 async function syncOne(game) {
   const mod = await import(`./games/${game.id}.js`)
-  let feed = await mod.buildFeed({ fetchJson, game })
+  let feed = await mod.buildFeed({ fetchJson, fetchText, game })
   feed = mergeManual(feed, loadManual(game.id))
   const v = validateFeed(feed)
   if (!v.ok) throw new Error('invalid feed: ' + v.errors.join('; '))
