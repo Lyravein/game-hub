@@ -73,7 +73,8 @@
       "endsAt": "2026-11-19T03:59:00.000Z",
       "rewards": [
         "Oroberyl x1000"
-      ]
+      ],
+      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.0ab0c1.jpg"
     },
     {
       "name": "Spirit's Restoration",
@@ -81,7 +82,8 @@
       "endsAt": "2026-11-05T03:59:00.000Z",
       "rewards": [
         "Spirit's Restoration HH Permit x5"
-      ]
+      ],
+      "image": null
     },
     {
       "name": "All the Inky Hues",
@@ -89,7 +91,8 @@
       "endsAt": "2026-11-05T04:00:00.000Z",
       "rewards": [
         "Oroberyl x1200"
-      ]
+      ],
+      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.0952be.jpg"
     },
     {
       "name": "Carly's Verdant Anthology",
@@ -97,13 +100,15 @@
       "endsAt": "2026-11-04T20:00:00.000Z",
       "rewards": [
         "Oroberyl x1500"
-      ]
+      ],
+      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.71776c.jpg"
     },
     {
       "name": "Contingency Readiness",
       "startsAt": "2026-10-28T20:00:00.000Z",
       "endsAt": "2026-11-04T20:00:00.000Z",
-      "rewards": []
+      "rewards": [],
+      "image": null
     },
     {
       "name": "Arena of Games",
@@ -111,7 +116,8 @@
       "endsAt": "2026-11-18T20:00:00.000Z",
       "rewards": [
         "Oroberyl x1200"
-      ]
+      ],
+      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.c59b9f.jpg"
     },
     {
       "name": "New Era for the Myriad Souls",
@@ -119,7 +125,8 @@
       "endsAt": "2026-11-13T20:00:00.000Z",
       "rewards": [
         "Oroberyl x300"
-      ]
+      ],
+      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.ab83b6.jpg"
     },
     {
       "name": "The Stars Are With Me",
@@ -127,13 +134,15 @@
       "endsAt": "2026-11-19T03:59:00.000Z",
       "rewards": [
         "The Stars Are With Me HH Permit x5"
-      ]
+      ],
+      "image": null
     },
     {
       "name": "Sanity Supply",
       "startsAt": "2026-10-15T04:00:00.000Z",
       "endsAt": "2026-11-19T03:59:00.000Z",
-      "rewards": []
+      "rewards": [],
+      "image": null
     }
   ],
   "news": [
@@ -208,5 +217,5 @@
       "category": "notices"
     }
   ],
-  "syncedAt": "2026-10-26T10:51:48.533Z"
+  "syncedAt": "2026-10-26T11:32:56.137Z"
 }

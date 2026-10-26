@@ -120,6 +120,38 @@ function parseEvents (lines, versionStart, fallbackEnd) {
   return out
 }
 
+// The public version-briefing bundle ships per-event thumbnails; no login needed.
+async function briefingArt (fetchText) {
+  const page = await fetchText('https://endfield.gryphline.com/version_briefing/latest?source_from=official')
+  const js = page.match(/src="(https:\/\/[^"]+version-v[^"]+\.js)"/)
+  if (!js) return {}
+  const code = await fetchText(js[1])
+  const base = code.match(/l\.p="(https:\/\/[^"]+\/)"/)
+  if (!base) return {}
+
+  const names = []
+  const pos = code.indexOf('"gameplay":')
+  if (pos !== -1) {
+    const chunk = code.slice(pos, pos + 200000)
+    for (const m of chunk.matchAll(/"name":\{[^}]*?"en-us":"((?:[^"\\]|\\.)*)"/g)) names.push(m[1])
+  }
+  const assets = {}
+  for (const m of code.matchAll(/"gameplay\.(\d+)\.thumbnail":l\.p\+"(assets\/imgs\/[^"]+)"/g)) {
+    assets[m[1]] = base[1] + m[2]
+  }
+
+  const byName = {}
+  names.forEach((n, i) => {
+    if (assets[i]) byName[n.replace(/\\'/g, "'").toLowerCase()] = assets[i]
+  })
+  return byName
+}
+
+function matchArt (byName, name) {
+  const key = name.replace(/\\'/g, "'").toLowerCase()
+  return byName[key] || null
+}
+
 export async function buildFeed ({ game, fetchText }) {
   let news = []
   let banners = []
@@ -156,6 +188,13 @@ export async function buildFeed ({ game, fetchText }) {
             endsAt: stale(b) ? fallbackEnd : b.endsAt
           }))
           events = parseEvents(lines, versionStart, fallbackEnd)
+
+          try {
+            const art = await briefingArt(fetchText)
+            for (const e of events) e.image = matchArt(art, e.name)
+          } catch (err) {
+            console.warn('[arknights-endfield] briefing art unavailable:', err.message)
+          }
 
           // Banner art: reuse the notice cover of the matching headhunting article.
           for (const b of banners) {
