@@ -120,7 +120,9 @@ function parseEvents (lines, versionStart, fallbackEnd) {
   return out
 }
 
-// The public version-briefing bundle ships per-event thumbnails; no login needed.
+// The public version-briefing bundle ships per-item thumbnails; no login needed.
+const BRIEF_SECTIONS = ['gameplay', 'characters', 'weapons']
+
 async function briefingArt (fetchText) {
   const page = await fetchText('https://endfield.gryphline.com/version_briefing/latest?source_from=official')
   const js = page.match(/src="(https:\/\/[^"]+version-v[^"]+\.js)"/)
@@ -129,27 +131,56 @@ async function briefingArt (fetchText) {
   const base = code.match(/l\.p="(https:\/\/[^"]+\/)"/)
   if (!base) return {}
 
-  const names = []
-  const pos = code.indexOf('"gameplay":')
-  if (pos !== -1) {
-    const chunk = code.slice(pos, pos + 200000)
-    for (const m of chunk.matchAll(/"name":\{[^}]*?"en-us":"((?:[^"\\]|\\.)*)"/g)) names.push(m[1])
-  }
+  // Asset paths sit in one shared map, names sit in per-section arrays.
   const assets = {}
-  for (const m of code.matchAll(/"gameplay\.(\d+)\.thumbnail":l\.p\+"(assets\/imgs\/[^"]+)"/g)) {
-    assets[m[1]] = base[1] + m[2]
+  for (const m of code.matchAll(/"(gameplay|characters|weapons)\.(\d+)\.thumbnail":l\.p\+"(assets\/imgs\/[^"]+)"/g)) {
+    assets[`${m[1]}.${m[2]}`] = base[1] + m[3]
   }
 
-  const byName = {}
-  names.forEach((n, i) => {
-    if (assets[i]) byName[n.replace(/\\'/g, "'").toLowerCase()] = assets[i]
-  })
-  return byName
+  const out = {}
+  for (const section of BRIEF_SECTIONS) {
+    const pos = code.indexOf(`"${section}":[`)
+    if (pos === -1) continue
+    const list = sliceArray(code, pos + section.length + 3)
+    const byName = {}
+    list.forEach((obj, i) => {
+      const name = obj.match(/[{,]"name":\{"zh-cn":"[^"]*","en-us":"((?:[^"\\]|\\.)*)"/)
+      const art = assets[`${section}.${i}`]
+      if (name && art) byName[norm(name[1])] = art
+    })
+    out[section] = byName
+  }
+  return out
+}
+
+// Returns the top-level objects of a JSON array starting at `start` ("[" index).
+function sliceArray (code, start) {
+  const items = []
+  let depth = 0
+  let objStart = -1
+  for (let i = start; i < code.length; i++) {
+    const c = code[i]
+    if (c === '[' || c === '{') {
+      if (c === '{' && depth === 1) objStart = i
+      depth++
+    } else if (c === ']' || c === '}') {
+      depth--
+      if (c === '}' && depth === 1 && objStart !== -1) {
+        items.push(code.slice(objStart, i + 1))
+        objStart = -1
+      }
+      if (depth === 0) break
+    }
+  }
+  return items
+}
+
+function norm (s) {
+  return s.replace(/\\'/g, "'").replace(/\s*\([^)]*\)\s*$/, '').trim().toLowerCase()
 }
 
 function matchArt (byName, name) {
-  const key = name.replace(/\\'/g, "'").toLowerCase()
-  return byName[key] || null
+  return (byName && byName[norm(name)]) || null
 }
 
 export async function buildFeed ({ game, fetchText }) {
@@ -191,7 +222,12 @@ export async function buildFeed ({ game, fetchText }) {
 
           try {
             const art = await briefingArt(fetchText)
-            for (const e of events) e.image = matchArt(art, e.name)
+            for (const e of events) e.image = matchArt(art.gameplay, e.name)
+            for (const b of banners) {
+              if (b.image) continue
+              const pool = b.type === 'weapon' ? art.weapons : art.characters
+              b.image = matchArt(pool, b.featured?.[0] || '')
+            }
           } catch (err) {
             console.warn('[arknights-endfield] briefing art unavailable:', err.message)
           }

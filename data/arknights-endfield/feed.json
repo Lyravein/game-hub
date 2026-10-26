@@ -36,7 +36,8 @@
       "endsAt": "2026-11-19T03:59:00.000Z",
       "featured": [
         "Tangtang"
-      ]
+      ],
+      "image": null
     },
     {
       "type": "weapon",
@@ -45,7 +46,8 @@
       "endsAt": "2026-11-19T03:59:00.000Z",
       "featured": [
         "Brigand's Calling (Handcannon)"
-      ]
+      ],
+      "image": null
     },
     {
       "type": "character",
@@ -54,7 +56,8 @@
       "endsAt": "2026-11-19T03:59:00.000Z",
       "featured": [
         "Argent Flow"
-      ]
+      ],
+      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.e7113d.png"
     },
     {
       "type": "weapon",
@@ -63,7 +66,8 @@
       "endsAt": "2026-11-19T03:59:00.000Z",
       "featured": [
         "Lunar Calling (Sword)"
-      ]
+      ],
+      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.36f191.png"
     }
   ],
   "events": [
@@ -217,5 +221,5 @@
       "category": "notices"
     }
   ],
-  "syncedAt": "2026-10-26T11:32:56.137Z"
+  "syncedAt": "2026-10-26T11:38:13.312Z"
 }
