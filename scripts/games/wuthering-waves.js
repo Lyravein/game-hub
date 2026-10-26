@@ -1,5 +1,16 @@
 const BASE_JSON = 'https://hw-media-cdn-mingchao.kurogame.com/akiwebsite/website2.0/json/G152/en'
 
+// Article pages carry no cover field, so the hero image lives inside the body HTML.
+async function articleCover (fetchJson, id) {
+  try {
+    const art = await fetchJson(`${BASE_JSON}/article/${id}.json`)
+    const m = (art?.articleContent || '').match(/src="(https:\/\/[^"]+?\.(?:jpe?g|png|webp))"/i)
+    return m ? m[1] : null
+  } catch {
+    return null
+  }
+}
+
 export async function buildFeed({ fetchJson, game }) {
   let news = []
   let banners = []
@@ -13,13 +24,14 @@ export async function buildFeed({ fetchJson, game }) {
         version = { current: '3.7', next: { number: '3.8', startsAt: '2026-11-11T04:00:00.000Z' } }
         menu.sort((a, b) => Date.parse(b.startTime) - Date.parse(a.startTime))
 
-        news = menu.slice(0, 12).map(item => ({
+        const picked = menu.slice(0, 12)
+        news = await Promise.all(picked.map(async item => ({
           title: item.articleTitle,
           url: `https://wutheringwaves.kurogames.com/en/main/news/detail/${item.articleId}`,
-          image: item.suggestCover || null,
+          image: item.suggestCover || await articleCover(fetchJson, item.articleId),
           publishedAt: new Date(item.startTime.replace(' ', 'T') + '+08:00').toISOString(),
           category: item.articleTypeName || 'announcement'
-        }))
+        })))
 
         const conveneItem = menu.find(m => (m.articleTitle || '').toLowerCase().includes('convene'))
         if (conveneItem) {

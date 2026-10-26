@@ -18,25 +18,36 @@
   ],
   "events": [
     {
-      "name": "Gifts of Grandeur (7-Day Login)",
+      "name": "Gifts of Singing Drizzle",
+      "image": "/game-hub/art/events/wuwa-singing-drizzle.jpg",
       "startsAt": "2026-10-22T02:00:00.000Z",
       "endsAt": "2026-11-11T03:59:00.000Z",
-      "rewards": ["Radiant Tide x5", "Lustrous Tide x5"],
+      "rewards": ["Radiant Tide x5", "Daily Login"],
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653"
     },
     {
-      "name": "Depths of Illusive Realm: Dreams of Radiance",
-      "startsAt": "2026-10-15T02:00:00.000Z",
+      "name": "Echo Erase",
+      "image": "/game-hub/art/events/wuwa-echo-erase.jpg",
+      "startsAt": "2026-10-22T02:00:00.000Z",
+      "endsAt": "2026-11-08T19:59:00.000Z",
+      "rewards": ["Astrite x400", "Leisure Event"],
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653"
+    },
+    {
+      "name": "Beyond the Waves: Land of Xuanfang",
+      "image": "/game-hub/art/events/wuwa-beyond-the-waves.jpg",
+      "startsAt": "2026-10-28T20:00:00.000Z",
       "endsAt": "2026-11-10T19:59:00.000Z",
-      "rewards": ["Astrite x1000", "Phantom Echo", "Premium Tuners"],
+      "rewards": ["Astrite x400", "Lustrous Tide x5"],
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653"
     },
     {
-      "name": "Ascendant Aces: Resonator Trial",
-      "startsAt": "2026-10-22T02:00:00.000Z",
-      "endsAt": "2026-11-11T03:59:00.000Z",
-      "rewards": ["Astrite x40", "Advanced Energy Core"],
-      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5668"
+      "name": "Chord Cleansing",
+      "image": "/game-hub/art/events/wuwa-chord-cleansing.jpg",
+      "startsAt": "2026-11-03T16:00:00.000Z",
+      "endsAt": "2026-11-10T19:59:00.000Z",
+      "rewards": ["Echo Double Drop"],
+      "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653"
     }
   ]
 }
