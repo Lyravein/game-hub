@@ -23,6 +23,20 @@ const upcomingBanners = computed(() => {
   return list.filter(b => Date.parse(b.startsAt) > t)
 })
 
+const bannerSections = computed(() => [
+  { key: 'ongoing', title: 'Ongoing', items: ongoingBanners.value, empty: 'No ongoing banners right now.' },
+  { key: 'upcoming', title: 'Upcoming', items: upcomingBanners.value, empty: 'No upcoming banners announced yet.' }
+])
+
+function splitByType (list) {
+  const characters = list.filter(b => b.type === 'character')
+  const weapons = list.filter(b => b.type !== 'character')
+  return [
+    characters.length ? { label: 'Characters', items: characters } : null,
+    weapons.length ? { label: 'Weapons', items: weapons } : null
+  ].filter(Boolean)
+}
+
 function bannerCountdown (b) {
   const s = Date.parse(b.startsAt)
   const e = Date.parse(b.endsAt)
@@ -97,74 +111,52 @@ function onImgError (e) {
           <section class="block">
             <h2>Character & Weapon Banners</h2>
 
-            <div class="banner-group">
+            <div v-for="sec in bannerSections" :key="sec.key" class="banner-group">
               <div class="group-title">
-                <span class="pulse-dot"></span>
-                <h3>Ongoing</h3>
+                <span v-if="sec.key === 'ongoing'" class="pulse-dot"></span>
+                <span v-else class="calendar-icon">⏳</span>
+                <h3>{{ sec.title }}</h3>
               </div>
-              <div v-if="ongoingBanners.length" class="grid">
-                <div v-for="b in ongoingBanners" :key="b.name + b.startsAt" class="card banner-card">
-                  <div class="card-media">
-                    <img
-                      :src="getArtFallback(b.image)"
-                      :alt="b.name"
-                      @error="onImgError"
-                    />
-                    <div class="card-badges">
-                      <span class="tag" :class="b.type">{{ b.type }}</span>
-                      <span class="badge badge-ongoing">Ongoing</span>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div>
-                      <h3>{{ b.name }}</h3>
-                      <div v-if="b.featured?.length" class="chips">
-                        <span v-for="f in b.featured" :key="f" class="chip-featured">{{ f }}</span>
-                      </div>
-                    </div>
-                    <div class="banner-bottom">
-                      <div class="meta">{{ fmtDate(b.startsAt) }} → {{ fmtDate(b.endsAt) }}</div>
-                      <div class="meta countdown">{{ bannerCountdown(b) }}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p v-else class="empty">No ongoing banners right now.</p>
-            </div>
 
-            <div class="banner-group">
-              <div class="group-title">
-                <span class="calendar-icon">⏳</span>
-                <h3>Upcoming</h3>
-              </div>
-              <div v-if="upcomingBanners.length" class="grid">
-                <div v-for="b in upcomingBanners" :key="b.name + b.startsAt" class="card banner-card">
-                  <div class="card-media">
-                    <img
-                      :src="getArtFallback(b.image)"
-                      :alt="b.name"
-                      @error="onImgError"
-                    />
-                    <div class="card-badges">
-                      <span class="tag" :class="b.type">{{ b.type }}</span>
-                      <span class="badge badge-upcoming">Upcoming</span>
-                    </div>
+              <template v-if="sec.items.length">
+                <template v-for="sub in splitByType(sec.items)" :key="sub.label">
+                  <div class="type-divider">
+                    <span>{{ sub.label }}</span>
                   </div>
-                  <div class="card-body">
-                    <div>
-                      <h3>{{ b.name }}</h3>
-                      <div v-if="b.featured?.length" class="chips">
-                        <span v-for="f in b.featured" :key="f" class="chip-featured">{{ f }}</span>
+                  <div class="grid">
+                    <div v-for="b in sub.items" :key="b.name + b.startsAt" class="card banner-card">
+                      <div class="card-media">
+                        <img
+                          :src="getArtFallback(b.image)"
+                          :alt="b.name"
+                          @error="onImgError"
+                        />
+                        <div class="card-badges">
+                          <span class="tag" :class="b.type">{{ b.type }}</span>
+                          <span class="badge" :class="sec.key === 'ongoing' ? 'badge-ongoing' : 'badge-upcoming'">
+                            {{ sec.title }}
+                          </span>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div>
+                          <h3>{{ b.name }}</h3>
+                          <div v-if="b.featured?.length" class="chips">
+                            <span v-for="f in b.featured" :key="f" class="chip-featured">{{ f }}</span>
+                          </div>
+                        </div>
+                        <div class="banner-bottom">
+                          <div class="meta">{{ fmtDate(b.startsAt) }} → {{ fmtDate(b.endsAt) }}</div>
+                          <div class="meta countdown" :class="{ 'countdown-upcoming': sec.key === 'upcoming' }">
+                            {{ bannerCountdown(b) }}
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="banner-bottom">
-                      <div class="meta">{{ fmtDate(b.startsAt) }} → {{ fmtDate(b.endsAt) }}</div>
-                      <div class="meta countdown-upcoming">{{ bannerCountdown(b) }}</div>
-                    </div>
                   </div>
-                </div>
-              </div>
-              <p v-else class="empty">No upcoming banners announced yet.</p>
+                </template>
+              </template>
+              <p v-else class="empty">{{ sec.empty }}</p>
             </div>
           </section>
 

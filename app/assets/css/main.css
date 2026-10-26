@@ -203,6 +203,25 @@ section.block h2 {
   line-height: 1;
 }
 
+.type-divider {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin: 1rem 0 .7rem;
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.type-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(148, 178, 220, .35), rgba(148, 178, 220, .05));
+}
+.type-divider:first-child { margin-top: 0; }
+
 .banner-card {
   display: flex;
   flex-direction: column;
