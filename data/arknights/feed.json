@@ -2,7 +2,16 @@
   "gameId": "arknights",
   "gameName": "Arknights",
   "version": {},
-  "banners": [],
+  "banners": [
+    {
+      "type": "character",
+      "name": "Sealed With Time",
+      "startsAt": "2026-10-14T12:00:00.000Z",
+      "endsAt": "2026-10-28T10:59:59.000Z",
+      "featured": [],
+      "image": null
+    }
+  ],
   "events": [
     {
       "name": "Critical Phase Transition",
@@ -12,6 +21,91 @@
       "url": ""
     }
   ],
-  "news": [],
-  "syncedAt": "2026-10-23T02:03:24.899Z"
+  "news": [
+    {
+      "title": "RECLAMATION ALGORITHM [RELAUNCH ANCHOR] OPEN",
+      "url": "https://arknights.global/news/4980",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/22/58t0nscB.png",
+      "publishedAt": "2026-10-23T03:00:00.458Z",
+      "category": "event"
+    },
+    {
+      "title": "Emergent Pulse Project - Critical Phase Transition Video Creation Event",
+      "url": "https://arknights.global/news/4874",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/14/gWJJ2u3W.png",
+      "publishedAt": "2026-10-14T09:02:07.148Z",
+      "category": "contest"
+    },
+    {
+      "title": "MAIN THEME EPISODE 17: CRITICAL PHASE TRANSITION",
+      "url": "https://arknights.global/news/4814",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/09/RPgofnTc.jpg",
+      "publishedAt": "2026-10-09T03:58:00.809Z",
+      "category": "event"
+    },
+    {
+      "title": "RECOMMENDED MONTHLY CARD AVAILABLE",
+      "url": "https://arknights.global/news/4797",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/08/s4tp_UzA.jpg",
+      "publishedAt": "2026-10-07T14:00:00.732Z",
+      "category": "event"
+    },
+    {
+      "title": "DUEL CHANNEL: IVY VINE LIMITED-TIME EVENT OPEN",
+      "url": "https://arknights.global/news/4683",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/09/20/a-TptheH.png",
+      "publishedAt": "2026-09-21T02:52:22.389Z",
+      "category": "event"
+    },
+    {
+      "title": "SIDESTORY: PEOPLE, A PEOPLE OPEN",
+      "url": "https://arknights.global/news/4635",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/09/11/PFzpefdu.png",
+      "publishedAt": "2026-09-12T02:50:00.536Z",
+      "category": "event"
+    },
+    {
+      "title": "SIDESTORY: WHEN ELEGIES ARE ASHES RERUN",
+      "url": "https://arknights.global/news/4452",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/09/12/0Y1rlmeN.jpg",
+      "publishedAt": "2026-08-25T02:50:00.464Z",
+      "category": "event"
+    },
+    {
+      "title": "STRONGHOLD PROTOCOL: ALLIANCE OPEN",
+      "url": "https://arknights.global/news/4434",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/08/17/vM24WjNX.png",
+      "publishedAt": "2026-08-18T02:50:00.735Z",
+      "category": "event"
+    },
+    {
+      "title": "Arknights PC Version FAQ",
+      "url": "https://arknights.global/news/4335",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/08/11/h0SclL9f.png",
+      "publishedAt": "2026-08-13T10:50:00.000Z",
+      "category": "event"
+    },
+    {
+      "title": "NEW STORY COLLECTION EVENT: CROSSING",
+      "url": "https://arknights.global/news/4164",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/08/07/m0AH0F8o.png",
+      "publishedAt": "2026-08-10T02:58:00.545Z",
+      "category": "event"
+    },
+    {
+      "title": "VECTOR BREAKTHROUGH #2 TRIAL FROM MISERY LIMITED-TIME EVENT OPEN",
+      "url": "https://arknights.global/news/4084",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/07/24/QgGfHXnQ.jpg",
+      "publishedAt": "2026-07-27T02:55:55.512Z",
+      "category": "event"
+    },
+    {
+      "title": "Dust Lifted Project - FIRST OF A THOUSAND AUTUMNS Video Creation Event",
+      "url": "https://arknights.global/news/3960",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/07/13/oQ0DBKHk.png",
+      "publishedAt": "2026-07-16T09:00:00.990Z",
+      "category": "contest"
+    }
+  ],
+  "syncedAt": "2026-10-27T06:56:28.182Z"
 }
