@@ -1,6 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { parseNteNews, parseNteBanners } from '../scripts/games/nte.js'
+import { parsePrydwenBanners } from '../scripts/local/prydwen-nte.js'
 
 const listHtml = `<div class="listNews">
   <a class="x" href="/en/article/news/gamenews/20261019/264675.html"><div class="listItem"><div><h2 class="title">Server Maintenance Notice: October 21</h2><div class="des">dup</div></div><div><p class="date">2026-10-19</p><p class="type">News</p></div></div></a>
@@ -23,6 +24,16 @@ test('parseNteNews reads the official list and skips rows without a date', () =>
   assert.deepEqual(news.map(n => n.title), ['Server Maintenance Notice: October 21', 'Version 1.4 NTE x Porsche Fan Creation Contest'])
   assert.equal(news[0].url, 'https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html')
   assert.equal(news[1].category, 'events')
+})
+
+test('parsePrydwenBanners keeps the Arc card with its date range and art', () => {
+  const html = '<div><article class="banner-card weapon-banner-card" data-banner-card="true" data-category="weapon" data-section="current"><img src="https://cdn.prydwen.gg/images/nte/banners/arc.webp" alt=""/><p class="banner-name">Far Side of the Moon</p><div class="art-timer" data-start-eu="2026-10-21T03:00:00.000Z" data-end-eu="2026-11-11T21:59:00.000Z"></div><a class="featured-rate-up" href="/x">Far Side of the Moon</a></article></div>'
+  const banners = parsePrydwenBanners(html)
+  assert.equal(banners.length, 1)
+  assert.equal(banners[0].type, 'weapon')
+  assert.equal(banners[0].name, 'Far Side of the Moon')
+  assert.equal(banners[0].image, 'https://cdn.prydwen.gg/images/nte/banners/arc.webp')
+  assert.deepEqual(banners[0].featured, ['Far Side of the Moon'])
 })
 
 test('parseNteBanners joins the flight chunks and keeps only dated banners', () => {

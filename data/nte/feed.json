@@ -10,6 +10,16 @@
       "endsAt": "2026-11-10T21:59:00.000Z",
       "featured": [],
       "image": "https://www.ntebuild.com/images/drip-marketing/drip-akane.webp"
+    },
+    {
+      "type": "weapon",
+      "name": "Far Side of the Moon",
+      "startsAt": "2026-10-21T03:00:00.000Z",
+      "endsAt": "2026-11-11T21:59:00.000Z",
+      "image": "https://cdn.prydwen.gg/images/nte/banners/1789565103265-addb6da0aa400cf15e7a7e9736d1f0ff.webp",
+      "featured": [
+        "Far Side of the Moon"
+      ]
     }
   ],
   "events": [],
@@ -69,5 +79,5 @@
       "category": "news"
     }
   ],
-  "syncedAt": "2026-10-27T08:29:11.978Z"
+  "syncedAt": "2026-10-27T08:49:23.400Z"
 }

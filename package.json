@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
-    "test": "node --test tests/"
+    "test": "node --test tests/",
+    "nte:arc": "node scripts/local/prydwen-nte.js"
   },
   "devDependencies": {
     "@fontsource/outfit": "^5.3.0"

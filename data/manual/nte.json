@@ -1,0 +1,14 @@
+{
+  "banners": [
+    {
+      "type": "weapon",
+      "name": "Far Side of the Moon",
+      "startsAt": "2026-10-21T03:00:00.000Z",
+      "endsAt": "2026-11-11T21:59:00.000Z",
+      "image": "https://cdn.prydwen.gg/images/nte/banners/1789565103265-addb6da0aa400cf15e7a7e9736d1f0ff.webp",
+      "featured": [
+        "Far Side of the Moon"
+      ]
+    }
+  ]
+}
