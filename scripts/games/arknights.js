@@ -1,54 +1,23 @@
-// Arknights CN (Hypergryph): events and gacha pools from Kengxxiao/ArknightsGameData (zh_CN, master),
-// news from the list embedded in the server-rendered page at ak.hypergryph.com/news.
-// The gamedata dump carries no banner art and no rate-up list, so those stay empty and
-// data/manual/arknights.json can fill them in.
-const BASE = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel'
-const NEWS_PAGE = 'https://ak.hypergryph.com/news'
-const NEWS_TABS = { 0: 'announcement', 1: 'activity', 2: 'news' }
+// Arknights EN (YoStar): events and gacha pools from ArknightsAssets/ArknightsGamedata (master),
+// news from the official website API (www.arknights.global/api/resource/news/list).
+// The gamedata dump carries no banner art and no rate-up list, and it lists no dates for the
+// next version; those stay empty and data/manual/arknights.json can override them.
+const BASE = 'https://raw.githubusercontent.com/ArknightsAssets/ArknightsGamedata/master/en/gamedata/excel'
+const NEWS_API = 'https://www.arknights.global/api/resource/news/list?index=1&size=12&type=latest'
 const SKIP_TYPES = new Set([
   'CHECKIN_ONLY', 'LOGIN_ONLY', 'CHECKIN_ACCESS', 'PRAY_ONLY', 'CHECKIN_VS',
   'CHECKIN_ALL_PLAYER', 'CHECKIN_VIDEO', 'SWITCH_ONLY', 'UNIQUE_ONLY', 'MISSION_ONLY',
 ])
 // Weekly rotating pools and the permanent returning pool are not announced banners.
-const SKIP_RULES = new Set(['DOUBLE', 'CLASSIC_DOUBLE', 'FESCLASSIC', 'CLASSIC_ATTAIN', 'BACKFLOW'])
-const SKIP_POOL_NAME = /适合多种场合|归航寻访/
+const SKIP_RULES = new Set(['DOUBLE', 'CLASSIC_DOUBLE', 'FESCLASSIC', 'CLASSIC_ATTAIN', 'RETURN'])
+const SKIP_POOL_NAME = /rare operators|returning headhunting/i
 const MAX_POOL_DAYS = 120
 
-// The news list ships inside the Next.js flight payload as an escaped JS string literal.
-function embeddedNews(html) {
-  const plain = String(html).replace(/\\(["\\])/g, '$1')
-  const at = plain.indexOf('"initialData":')
-  if (at < 0) return []
-  const start = plain.indexOf('{', at)
-  let depth = 0
-  let inStr = false
-  let esc = false
-  let end = -1
-  for (let i = start; i < plain.length; i++) {
-    const c = plain[i]
-    if (inStr) {
-      if (esc) esc = false
-      else if (c === '\\') esc = true
-      else if (c === '"') inStr = false
-      continue
-    }
-    if (c === '"') inStr = true
-    else if (c === '{') depth++
-    else if (c === '}' && --depth === 0) { end = i + 1; break }
-  }
-  if (end < 0) return []
-  try {
-    return JSON.parse(plain.slice(start, end)).LATEST?.list ?? []
-  } catch {
-    return []
-  }
-}
-
-export async function buildFeed({ fetchJson, fetchText, game }) {
-  const [act, gacha, page] = await Promise.all([
+export async function buildFeed({ fetchJson, game }) {
+  const [act, gacha, newsRes] = await Promise.all([
     fetchJson(`${BASE}/activity_table.json`),
     fetchJson(`${BASE}/gacha_table.json`),
-    fetchText(NEWS_PAGE).catch(() => ''),
+    fetchJson(NEWS_API).catch(() => null),
   ])
   const now = Date.now()
 
@@ -74,14 +43,14 @@ export async function buildFeed({ fetchJson, fetchText, game }) {
     }))
     .sort((x, y) => Date.parse(x.startsAt) - Date.parse(y.startsAt))
 
-  const news = embeddedNews(page)
-    .filter(n => n?.title && n.displayTime)
+  const news = (newsRes?.data?.rows ?? [])
+    .filter(n => n?.title && n.publishTime)
     .map(n => ({
       title: n.title.trim(),
-      url: `https://ak.hypergryph.com/news/${n.cid}`,
-      image: n.cover || n.extraCover || null,
-      publishedAt: new Date(n.displayTime * 1000).toISOString(),
-      category: NEWS_TABS[n.tab] || 'announcement',
+      url: n.link || '',
+      image: n.bigImage || n.smallImage || null,
+      publishedAt: new Date(n.publishTime).toISOString(),
+      category: n.type || 'announcement',
     }))
 
   return {
