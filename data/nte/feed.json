@@ -2,8 +2,72 @@
   "gameId": "nte",
   "gameName": "Neverness to Everness (NTE)",
   "version": {},
-  "banners": [],
+  "banners": [
+    {
+      "type": "character",
+      "name": "Akane Rin",
+      "startsAt": "2026-10-21T02:00:00.000Z",
+      "endsAt": "2026-11-10T21:59:00.000Z",
+      "featured": [],
+      "image": "https://www.ntebuild.com/images/drip-marketing/drip-akane.webp"
+    }
+  ],
   "events": [],
-  "news": [],
-  "syncedAt": "2026-10-23T02:03:25.105Z"
+  "news": [
+    {
+      "title": "Server Maintenance Notice: October 21",
+      "url": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
+      "publishedAt": "2026-10-19T00:00:00.000Z",
+      "category": "news"
+    },
+    {
+      "title": "Account Action Notice: 2026-10-19 (UTC+8)",
+      "url": "https://nte.perfectworld.com/en/article/news/gamebroad/20261019/264665.html",
+      "publishedAt": "2026-10-19T00:00:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "Account Action Notice: 2026-10-12 (UTC+8)",
+      "url": "https://nte.perfectworld.com/en/article/news/gamebroad/20261012/264504.html",
+      "publishedAt": "2026-10-12T00:00:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "Version 1.4 NTE x Porsche Fan Creation Contest",
+      "url": "https://nte.perfectworld.com/en/article/news/gameevent/20260929/264427.html",
+      "publishedAt": "2026-09-29T00:00:00.000Z",
+      "category": "events"
+    },
+    {
+      "title": "Ver. 1.4 「For Whom the Verses Mourn」 Patch Notes",
+      "url": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html",
+      "publishedAt": "2026-09-29T00:00:00.000Z",
+      "category": "news"
+    },
+    {
+      "title": "Account Action Notice: 2026-09-28 (UTC+9)",
+      "url": "https://nte.perfectworld.com/en/article/news/gamebroad/20260928/264393.html",
+      "publishedAt": "2026-09-28T00:00:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "NTE Top-Up Center Exclusive Bundles Now Available!",
+      "url": "https://nte.perfectworld.com/en/article/news/gameevent/20260924/264365.html",
+      "publishedAt": "2026-09-24T00:00:00.000Z",
+      "category": "events"
+    },
+    {
+      "title": "Account Action Notice: 2026-09-21 (UTC+9)",
+      "url": "https://nte.perfectworld.com/en/article/news/gamebroad/20260921/264250.html",
+      "publishedAt": "2026-09-21T00:00:00.000Z",
+      "category": "notices"
+    },
+    {
+      "title": "Asia & SEA Server Maintenance Notice: Sept 16",
+      "url": "https://nte.perfectworld.com/en/article/news/gamenews/20260914/264134.html",
+      "publishedAt": "2026-09-15T00:00:00.000Z",
+      "category": "news"
+    }
+  ],
+  "syncedAt": "2026-10-27T08:29:11.978Z"
 }

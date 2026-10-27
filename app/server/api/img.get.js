@@ -9,7 +9,8 @@ const ALLOWED = [
   'hypergryph.com',
   'yo-star.com',
   'perfectworld.com',
-  'wiki.gg'
+  'wiki.gg',
+  'ntebuild.com'
 ]
 
 export default defineEventHandler(async (event) => {

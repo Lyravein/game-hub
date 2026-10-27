@@ -3,7 +3,8 @@ import assert from 'node:assert/strict'
 import GAMES from '../games.config.js'
 import { validateFeed } from '../app/shared/feed-schema.js'
 
-for (const id of ['arknights-endfield', 'wuthering-waves', 'nte']) {
+// nte and arknights fetch live sources, so they are covered by their own parser tests instead.
+for (const id of ['arknights-endfield', 'wuthering-waves']) {
   test(`${id} adapter returns a valid empty feed without external access`, async () => {
     const game = GAMES.find(item => item.id === id)
     const { buildFeed } = await import(`../scripts/games/${id}.js`)
