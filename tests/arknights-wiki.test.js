@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { parseWikiEvents, parseWikiBanners } from '../scripts/games/arknights.js'
+import { parseWikiEvents, parseWikiBanners, artFor } from '../scripts/games/arknights.js'
 
 // Global dates on the wiki are UTC-7; cells without a globalstart are CN-only and must be skipped.
 const wikitext = `{{Onup events head}}
@@ -48,6 +48,16 @@ test('parseWikiEvents keeps only cells with a global start date', () => {
   assert.deepEqual(events.map(e => e.name), ['Critical Phase Transition', "The Masses' Travels Rerun"])
   assert.equal(events[1].startsAt, '2026-11-05T11:00:00.000Z')
   assert.equal(events[0].endsAt, '2026-10-28T10:59:59.000Z')
+})
+
+test('artFor matches event key art and ignores same-name contest posts and weak names', () => {
+  const news = [
+    { title: 'Emergent Pulse Project - Critical Phase Transition Video Creation Event', image: 'contest.jpg' },
+    { title: 'MAIN THEME EPISODE 17: CRITICAL PHASE TRANSITION', image: 'episode.jpg' },
+    { title: 'RECOMMENDED MONTHLY CARD AVAILABLE', image: 'card.jpg' }
+  ]
+  assert.equal(artFor('Critical Phase Transition', news), 'episode.jpg')
+  assert.equal(artFor('Sealed With Time', news), null)
 })
 
 test('parseWikiBanners keeps dated non-rotating banners and their rate-up Operators', () => {

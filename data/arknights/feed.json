@@ -15,12 +15,30 @@
       "startsAt": "2026-10-14T15:00:00.000Z",
       "endsAt": "2026-10-28T10:59:59.000Z",
       "featured": [
-        "Closure",
-        "Crackborne",
-        "Exusiai the New Covenant",
-        "Kal'tsit Esperanta",
-        "Lappland the Decadenza",
-        "Wiš'adel"
+        {
+          "name": "Closure",
+          "image": "https://arknights.wiki.gg/images/thumb/Closure_icon.png/160px-Closure_icon.png?e39ed3"
+        },
+        {
+          "name": "Crackborne",
+          "image": "https://arknights.wiki.gg/images/thumb/Crackborne_icon.png/160px-Crackborne_icon.png?7f3a07"
+        },
+        {
+          "name": "Exusiai the New Covenant",
+          "image": "https://arknights.wiki.gg/images/thumb/Exusiai_the_New_Covenant_icon.png/160px-Exusiai_the_New_Covenant_icon.png?ec7dd8"
+        },
+        {
+          "name": "Kal'tsit Esperanta",
+          "image": "https://arknights.wiki.gg/images/thumb/Kal%27tsit_Esperanta_icon.png/160px-Kal%27tsit_Esperanta_icon.png?9e9f69"
+        },
+        {
+          "name": "Lappland the Decadenza",
+          "image": "https://arknights.wiki.gg/images/thumb/Lappland_the_Decadenza_icon.png/160px-Lappland_the_Decadenza_icon.png?3660b4"
+        },
+        {
+          "name": "Wiš'adel",
+          "image": "https://arknights.wiki.gg/images/thumb/Wi%C5%A1%27adel_icon.png/160px-Wi%C5%A1%27adel_icon.png?9f170d"
+        }
       ],
       "image": null
     },
@@ -39,7 +57,8 @@
       "startsAt": "2026-10-14T12:00:00.000Z",
       "endsAt": "2026-10-28T10:59:59.000Z",
       "rewards": [],
-      "url": ""
+      "url": "",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/09/RPgofnTc.jpg"
     }
   ],
   "news": [
@@ -126,7 +145,91 @@
       "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/07/13/oQ0DBKHk.png",
       "publishedAt": "2026-07-16T09:00:00.990Z",
       "category": "contest"
+    },
+    {
+      "title": "SIDESTORY: FIRST OF A THOUSAND AUTUMNS OPEN",
+      "url": "https://arknights.global/news/3898",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/07/10/nAfpKc00.jpg",
+      "publishedAt": "2026-07-13T02:54:44.258Z",
+      "category": "event"
+    },
+    {
+      "title": "[ARKNIGHTS X RILAKKUMA] LANGUID SENTIMENT COLLAB EVENT OPEN",
+      "url": "https://arknights.global/news/3847",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/07/03/yHCsPZ6k.jpg",
+      "publishedAt": "2026-07-04T02:58:00.838Z",
+      "category": "event"
+    },
+    {
+      "title": "SIDESTORY: SUCH IS THE JOY OF OUR REUNION RERUN",
+      "url": "https://arknights.global/news/3841",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/07/03/nNNPhL9n.jpg",
+      "publishedAt": "2026-07-03T02:50:00.290Z",
+      "category": "event"
+    },
+    {
+      "title": "LIMITED-TIME HEADHUNTING OPEN - CELEBRATION & HOPE",
+      "url": "https://arknights.global/news/3836",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/06/30/_-q_iEqj.png",
+      "publishedAt": "2026-07-01T02:55:00.379Z",
+      "category": "event"
+    },
+    {
+      "title": "SIDESTORY: MEDJEHTIQEDTI BOUND OPEN",
+      "url": "https://arknights.global/news/3714",
+      "image": "https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/06/18/_fYM8m9k.jpeg",
+      "publishedAt": "2026-06-19T02:58:00.872Z",
+      "category": "event"
+    },
+    {
+      "title": "#06 TRIALS FOR NAVIGATOR NOW OPEN",
+      "url": "https://arknights.global/news/3668",
+      "image": "https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/06/09/Haxafxiv.jpeg",
+      "publishedAt": "2026-06-09T03:00:00.592Z",
+      "category": "event"
+    },
+    {
+      "title": "SIDESTORY: EXODUS FROM THE PALE SEA RERUN",
+      "url": "https://arknights.global/news/3635",
+      "image": "https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/06/01/CcyP519a.jpeg",
+      "publishedAt": "2026-06-02T02:58:00.078Z",
+      "category": "event"
+    },
+    {
+      "title": "SIDESTORY: UNREALIZED REALITIES OPEN",
+      "url": "https://arknights.global/news/3531",
+      "image": "https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/05/15/tTyA58l0.jpeg",
+      "publishedAt": "2026-05-15T02:58:05.675Z",
+      "category": "event"
+    },
+    {
+      "title": "I PORTATORI DEI VELLUTI RERUN",
+      "url": "https://arknights.global/news/3479",
+      "image": "https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/05/18/G5jZq2NZ.jpeg",
+      "publishedAt": "2026-05-05T02:58:00.875Z",
+      "category": "event"
+    },
+    {
+      "title": "STRONGHOLD PROTOCOL: ALLIANCE OPEN",
+      "url": "https://arknights.global/news/3412",
+      "image": "https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/04/23/SsP-Vxab.jpeg",
+      "publishedAt": "2026-04-24T03:00:00.081Z",
+      "category": "event"
+    },
+    {
+      "title": "Sunlit Peak Project - RETRACING OUR STEPS Video Creation Event",
+      "url": "https://arknights.global/news/2964",
+      "image": "https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/04/13/U47EXqf3.jpeg",
+      "publishedAt": "2026-04-14T09:00:00.163Z",
+      "category": "contest"
+    },
+    {
+      "title": "SIDESTORY: RETRACING OUR STEPS OPEN",
+      "url": "https://arknights.global/news/2926",
+      "image": "https://webusstatic.yo-star.com/web-cms-prod/upload/content/2026/04/09/LgFKbnGm.jpeg",
+      "publishedAt": "2026-04-10T02:50:00.191Z",
+      "category": "event"
     }
   ],
-  "syncedAt": "2026-10-27T08:09:13.300Z"
+  "syncedAt": "2026-10-27T08:14:05.566Z"
 }

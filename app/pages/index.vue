@@ -144,7 +144,16 @@ function onImgError (e) {
                         <div>
                           <h3>{{ b.name }}</h3>
                           <div v-if="b.featured?.length" class="chips">
-                            <span v-for="f in b.featured" :key="f" class="chip-featured">{{ f }}</span>
+                            <span v-for="f in b.featured" :key="f.name || f" class="chip-featured">
+                              <img
+                                v-if="f.image"
+                                :src="getArtFallback(f.image)"
+                                :alt="f.name"
+                                class="chip-avatar"
+                                @error="e => e.target.remove()"
+                              />
+                              {{ f.name || f }}
+                            </span>
                           </div>
                         </div>
                         <div class="banner-bottom">

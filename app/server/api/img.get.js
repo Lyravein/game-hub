@@ -8,7 +8,8 @@ const ALLOWED = [
   'gryphline.com',
   'hypergryph.com',
   'yo-star.com',
-  'perfectworld.com'
+  'perfectworld.com',
+  'wiki.gg'
 ]
 
 export default defineEventHandler(async (event) => {

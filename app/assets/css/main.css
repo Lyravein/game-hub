@@ -264,6 +264,17 @@ section.block h2 {
 .chip-featured {
   color: var(--text) !important;
   background: rgba(255, 255, 255, .04);
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.chip-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255, 255, 255, .08);
 }
 
 .countdown-upcoming {
