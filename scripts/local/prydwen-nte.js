@@ -53,6 +53,11 @@ async function main() {
   console.log(`[prydwen] ${banners.length} arc banner -> ${target}`)
 
   await run(process.execPath, ['scripts/sync.js', 'nte'], { cwd: ROOT, stdio: 'inherit' })
+
+  // Push the manual file so the VPS hourly sync merges it too.
+  await run('rsync', ['-az', `${join(ROOT, 'data')}/`, 'lyravein@100.111.77.5:~/game-hub/data/'])
+    .then(() => console.log('[prydwen] pushed data/ to the VPS'))
+    .catch(e => console.warn(`[prydwen] push to VPS failed: ${e.message.split('\n')[0]}`))
 }
 
 // Importable by tests: only touch the network when executed directly.
