@@ -2,110 +2,108 @@
   "gameId": "arknights",
   "gameName": "Arknights",
   "version": {},
-  "banners": [
-    {
-      "type": "character",
-      "name": "Sealed With Time",
-      "startsAt": "2026-10-14T12:00:00.000Z",
-      "endsAt": "2026-10-28T10:59:59.000Z",
-      "featured": [],
-      "image": null
-    }
-  ],
+  "banners": [],
   "events": [
     {
-      "name": "Critical Phase Transition",
-      "startsAt": "2026-10-14T12:00:00.000Z",
-      "endsAt": "2026-10-28T10:59:59.000Z",
+      "name": "视相博物馆：演化",
+      "startsAt": "2026-10-24T13:30:00.000Z",
+      "endsAt": "2026-11-06T19:59:59.000Z",
+      "rewards": [],
+      "url": ""
+    },
+    {
+      "name": "感谢庆典特别招募",
+      "startsAt": "2026-10-24T13:30:00.000Z",
+      "endsAt": "2026-12-01T19:59:59.000Z",
       "rewards": [],
       "url": ""
     }
   ],
   "news": [
     {
-      "title": "RECLAMATION ALGORITHM [RELAUNCH ANCHOR] OPEN",
-      "url": "https://arknights.global/news/4980",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/22/58t0nscB.png",
-      "publishedAt": "2026-10-23T03:00:00.458Z",
-      "category": "event"
+      "title": "《冻土与火种》网页活动开启",
+      "url": "https://ak.hypergryph.com/news/7353",
+      "image": null,
+      "publishedAt": "2026-10-24T13:00:00.000Z",
+      "category": "activity"
     },
     {
-      "title": "Emergent Pulse Project - Critical Phase Transition Video Creation Event",
-      "url": "https://arknights.global/news/4874",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/14/gWJJ2u3W.png",
-      "publishedAt": "2026-10-14T09:02:07.148Z",
-      "category": "contest"
+      "title": "[活动预告]2026感谢庆典即将开启",
+      "url": "https://ak.hypergryph.com/news/0787",
+      "image": null,
+      "publishedAt": "2026-10-24T12:30:00.000Z",
+      "category": "activity"
     },
     {
-      "title": "MAIN THEME EPISODE 17: CRITICAL PHASE TRANSITION",
-      "url": "https://arknights.global/news/4814",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/09/RPgofnTc.jpg",
-      "publishedAt": "2026-10-09T03:58:00.809Z",
-      "category": "event"
+      "title": "[限定寻访·庆典]【将雪投火】限时寻访即将开启",
+      "url": "https://ak.hypergryph.com/news/4916",
+      "image": null,
+      "publishedAt": "2026-10-24T12:30:00.000Z",
+      "category": "activity"
     },
     {
-      "title": "RECOMMENDED MONTHLY CARD AVAILABLE",
-      "url": "https://arknights.global/news/4797",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/08/s4tp_UzA.jpg",
-      "publishedAt": "2026-10-07T14:00:00.732Z",
-      "category": "event"
+      "title": "[明日方舟]【公开招募】标签强制刷新通知",
+      "url": "https://ak.hypergryph.com/news/9675",
+      "image": null,
+      "publishedAt": "2026-10-24T12:30:00.000Z",
+      "category": "announcement"
     },
     {
-      "title": "DUEL CHANNEL: IVY VINE LIMITED-TIME EVENT OPEN",
-      "url": "https://arknights.global/news/4683",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/09/20/a-TptheH.png",
-      "publishedAt": "2026-09-21T02:52:22.389Z",
-      "category": "event"
+      "title": "[明日方舟]10月24日21:30闪断更新公告",
+      "url": "https://ak.hypergryph.com/news/1441",
+      "image": null,
+      "publishedAt": "2026-10-24T11:00:00.000Z",
+      "category": "announcement"
     },
     {
-      "title": "SIDESTORY: PEOPLE, A PEOPLE OPEN",
-      "url": "https://arknights.global/news/4635",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/09/11/PFzpefdu.png",
-      "publishedAt": "2026-09-12T02:50:00.536Z",
-      "category": "event"
+      "title": "《明日方舟》制作组通讯#70期",
+      "url": "https://ak.hypergryph.com/news/0799",
+      "image": null,
+      "publishedAt": "2026-10-17T09:00:00.000Z",
+      "category": "news"
     },
     {
-      "title": "SIDESTORY: WHEN ELEGIES ARE ASHES RERUN",
-      "url": "https://arknights.global/news/4452",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/09/12/0Y1rlmeN.jpg",
-      "publishedAt": "2026-08-25T02:50:00.464Z",
-      "category": "event"
+      "title": "[明日方舟]10月16日16:00闪断更新公告",
+      "url": "https://ak.hypergryph.com/news/3020",
+      "image": null,
+      "publishedAt": "2026-10-16T03:00:00.000Z",
+      "category": "announcement"
     },
     {
-      "title": "STRONGHOLD PROTOCOL: ALLIANCE OPEN",
-      "url": "https://arknights.global/news/4434",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/08/17/vM24WjNX.png",
-      "publishedAt": "2026-08-18T02:50:00.735Z",
-      "category": "event"
+      "title": "【明日方舟×国家图书馆】「恒远津梁」限时活动即将开启",
+      "url": "https://ak.hypergryph.com/news/1454",
+      "image": null,
+      "publishedAt": "2026-10-11T03:00:00.000Z",
+      "category": "activity"
     },
     {
-      "title": "Arknights PC Version FAQ",
-      "url": "https://arknights.global/news/4335",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/08/11/h0SclL9f.png",
-      "publishedAt": "2026-08-13T10:50:00.000Z",
-      "category": "event"
+      "title": "「昨日海」创作征集活动开启",
+      "url": "https://ak.hypergryph.com/news/3033",
+      "image": null,
+      "publishedAt": "2026-10-09T04:00:00.000Z",
+      "category": "activity"
     },
     {
-      "title": "NEW STORY COLLECTION EVENT: CROSSING",
-      "url": "https://arknights.global/news/4164",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/08/07/m0AH0F8o.png",
-      "publishedAt": "2026-08-10T02:58:00.545Z",
-      "category": "event"
+      "title": "[明日方舟]10月09日06:00版本更新停机维护公告",
+      "url": "https://ak.hypergryph.com/news/6242",
+      "image": null,
+      "publishedAt": "2026-10-07T04:00:00.000Z",
+      "category": "announcement"
     },
     {
-      "title": "VECTOR BREAKTHROUGH #2 TRIAL FROM MISERY LIMITED-TIME EVENT OPEN",
-      "url": "https://arknights.global/news/4084",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/07/24/QgGfHXnQ.jpg",
-      "publishedAt": "2026-07-27T02:55:55.512Z",
-      "category": "event"
+      "title": "[活动预告]SideStory「昨日海」限时活动即将开启",
+      "url": "https://ak.hypergryph.com/news/5101",
+      "image": null,
+      "publishedAt": "2026-10-03T03:00:00.000Z",
+      "category": "activity"
     },
     {
-      "title": "Dust Lifted Project - FIRST OF A THOUSAND AUTUMNS Video Creation Event",
-      "url": "https://arknights.global/news/3960",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/07/13/oQ0DBKHk.png",
-      "publishedAt": "2026-07-16T09:00:00.990Z",
-      "category": "contest"
+      "title": "[明日方舟]09月29日16:00闪断更新公告",
+      "url": "https://ak.hypergryph.com/news/8577",
+      "image": null,
+      "publishedAt": "2026-09-29T03:00:00.000Z",
+      "category": "announcement"
     }
   ],
-  "syncedAt": "2026-10-27T06:56:28.182Z"
+  "syncedAt": "2026-10-27T07:02:22.601Z"
 }
