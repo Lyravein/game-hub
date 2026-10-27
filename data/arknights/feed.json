@@ -1,7 +1,13 @@
 {
   "gameId": "arknights",
   "gameName": "Arknights",
-  "version": {},
+  "version": {
+    "current": "Ep 17",
+    "next": {
+      "number": "The Masses' Travels Rerun",
+      "startsAt": "2026-11-05T11:00:00.000Z"
+    }
+  },
   "banners": [
     {
       "type": "character",
@@ -107,5 +113,5 @@
       "category": "contest"
     }
   ],
-  "syncedAt": "2026-10-27T07:06:43.714Z"
+  "syncedAt": "2026-10-27T08:05:54.820Z"
 }
