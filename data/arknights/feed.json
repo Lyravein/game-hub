@@ -12,8 +12,23 @@
     {
       "type": "character",
       "name": "Sealed With Time",
-      "startsAt": "2026-10-14T12:00:00.000Z",
+      "startsAt": "2026-10-14T15:00:00.000Z",
       "endsAt": "2026-10-28T10:59:59.000Z",
+      "featured": [
+        "Closure",
+        "Crackborne",
+        "Exusiai the New Covenant",
+        "Kal'tsit Esperanta",
+        "Lappland the Decadenza",
+        "Wiš'adel"
+      ],
+      "image": null
+    },
+    {
+      "type": "character",
+      "name": "Orienteering #7",
+      "startsAt": "2026-10-28T15:00:00.000Z",
+      "endsAt": "2026-11-11T10:59:59.000Z",
       "featured": [],
       "image": null
     }
@@ -113,5 +128,5 @@
       "category": "contest"
     }
   ],
-  "syncedAt": "2026-10-27T08:05:54.820Z"
+  "syncedAt": "2026-10-27T08:09:13.300Z"
 }
