@@ -45,6 +45,27 @@ const bannerSections = computed(() => [
   { key: 'upcoming', title: 'Upcoming', items: upcomingBanners.value, empty: 'No upcoming banners announced yet.' }
 ])
 
+const ongoingEvents = computed(() => {
+  const list = feed.value?.events || []
+  const t = now.value
+  return list.filter(e => {
+    const s = Date.parse(e.startsAt)
+    const end = Date.parse(e.endsAt)
+    return s <= t && end > t
+  })
+})
+
+const upcomingEvents = computed(() => {
+  const list = feed.value?.events || []
+  const t = now.value
+  return list.filter(e => Date.parse(e.startsAt) > t)
+})
+
+const eventSections = computed(() => [
+  { key: 'ongoing', title: 'Ongoing', items: ongoingEvents.value, empty: 'No ongoing events right now.' },
+  { key: 'upcoming', title: 'Upcoming', items: upcomingEvents.value, empty: 'No upcoming events announced yet.' }
+])
+
 function splitByType (list) {
   const characters = list.filter(b => b.type === 'character')
   const weapons = list.filter(b => b.type !== 'character')
@@ -69,6 +90,25 @@ function bannerCountdown (b) {
   }
   if (t <= e) {
     return countdown(b.endsAt)
+  }
+  return 'ended'
+}
+
+function eventCountdown (e) {
+  const s = Date.parse(e.startsAt)
+  const end = Date.parse(e.endsAt)
+  const t = now.value
+  if (t < s) {
+    const ms = s - t
+    const d = Math.floor(ms / 86400e3)
+    const h = Math.floor(ms % 86400e3 / 3600e3)
+    const m = Math.floor(ms % 3600e3 / 60e3)
+    if (d > 0) return `starts in ${d}d ${h}h`
+    if (h > 0) return `starts in ${h}h ${m}m`
+    return `starts in ${m}m`
+  }
+  if (t <= end) {
+    return countdown(e.endsAt)
   }
   return 'ended'
 }
@@ -264,41 +304,57 @@ function onImgError (e) {
 
           <section id="events" class="block">
             <div class="section-header">
-              <h2 class="section-title">Ongoing Events</h2>
+              <h2 class="section-title">Events &amp; Activities</h2>
               <span class="section-tag">Activities</span>
             </div>
-            <div v-if="feed.events.length" class="grid">
-              <div v-for="e in feed.events" :key="e.name + e.startsAt" class="card">
-                <div class="card-media">
-                  <img
-                    :src="getArtFallback(e.image)"
-                    :alt="e.name"
-                    loading="lazy"
-                    @error="onImgError"
-                  />
-                  <div class="card-media-fade"></div>
-                  <div class="card-badges">
-                    <span class="badge badge-ongoing">Event</span>
-                    <a v-if="e.url" :href="e.url" target="_blank" rel="noopener" class="event-link">Details ↗</a>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div>
-                    <h3>{{ e.name }}</h3>
-                    <div v-if="e.rewards?.length" class="chips">
-                      <span v-for="r in e.rewards" :key="r" class="chip-reward">{{ r }}</span>
+
+            <div v-for="sec in eventSections" :key="sec.key" class="banner-group">
+              <div class="group-title">
+                <span v-if="sec.key === 'ongoing'" class="pulse-dot"></span>
+                <span v-else class="calendar-icon">⏳</span>
+                <h3>{{ sec.title }}</h3>
+              </div>
+
+              <div v-if="sec.items.length" class="grid">
+                <div v-for="e in sec.items" :key="e.name + e.startsAt" class="card">
+                  <div class="card-media">
+                    <img
+                      :src="getArtFallback(e.image)"
+                      :alt="e.name"
+                      loading="lazy"
+                      @error="onImgError"
+                    />
+                    <div class="card-media-fade"></div>
+                    <div class="card-badges">
+                      <span class="badge" :class="sec.key === 'ongoing' ? 'badge-ongoing' : 'badge-upcoming'">
+                        {{ sec.title }} Event
+                      </span>
+                      <a v-if="e.url" :href="e.url" target="_blank" rel="noopener" class="event-link">Details ↗</a>
                     </div>
                   </div>
-                  <div class="banner-bottom">
-                    <div class="meta-dates">{{ fmtDate(e.startsAt) }} → {{ fmtDate(e.endsAt) }}</div>
-                    <div class="countdown-badge ongoing">{{ countdown(e.endsAt) }}</div>
+                  <div class="card-body">
+                    <div>
+                      <h3>{{ e.name }}</h3>
+                      <div v-if="e.rewards?.length" class="chips">
+                        <span v-for="r in e.rewards" :key="r" class="chip-reward">{{ r }}</span>
+                      </div>
+                    </div>
+                    <div class="banner-bottom">
+                      <div class="meta-dates">{{ fmtDate(e.startsAt) }} → {{ fmtDate(e.endsAt) }}</div>
+                      <div
+                        class="countdown-badge"
+                        :class="sec.key === 'ongoing' ? 'ongoing' : 'upcoming'"
+                      >
+                        {{ eventCountdown(e) }}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div v-else class="empty-box">
-              <span class="empty-icon">✦</span>
-              No ongoing events right now.
+              <div v-else class="empty-box">
+                <span class="empty-icon">✦</span>
+                {{ sec.empty }}
+              </div>
             </div>
           </section>
 

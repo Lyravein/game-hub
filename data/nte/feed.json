@@ -95,7 +95,7 @@
     },
     {
       "name": "Coal Lump's Treasure",
-      "image": "/game-hub/art/events/nte-pukaland.png",
+      "image": "/game-hub/art/events/nte-patch14.jpg",
       "startsAt": "2026-10-08T02:00:00.000Z",
       "endsAt": "2026-11-11T21:59:00.000Z",
       "rewards": [
@@ -106,7 +106,7 @@
     },
     {
       "name": "Pukaland Travelogue",
-      "image": "/game-hub/art/events/nte-pukaland.png",
+      "image": "/game-hub/art/events/nte-patch14.jpg",
       "startsAt": "2026-09-30T02:00:00.000Z",
       "endsAt": "2026-11-11T21:59:00.000Z",
       "rewards": [
@@ -114,6 +114,28 @@
         "Puka Glider Skin"
       ],
       "url": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html"
+    },
+    {
+      "name": "Once Upon a Glitched Call (7-Day Login)",
+      "image": "/game-hub/art/banners/nte-v15.jpg",
+      "startsAt": "2026-11-11T03:00:00.000Z",
+      "endsAt": "2026-12-02T21:59:00.000Z",
+      "rewards": [
+        "Annulith x600",
+        "Limited Special Board Ticket x10"
+      ],
+      "url": "https://nte.perfectworld.com/en/article/news"
+    },
+    {
+      "name": "Anomaly Commission: Midnight Dispatch",
+      "image": "/game-hub/art/banners/nte-v15.jpg",
+      "startsAt": "2026-11-11T03:00:00.000Z",
+      "endsAt": "2026-12-02T21:59:00.000Z",
+      "rewards": [
+        "Annulith x400",
+        "Cosmos Upgrade Matrix"
+      ],
+      "url": "https://nte.perfectworld.com/en/article/news"
     }
   ],
   "news": [
@@ -172,5 +194,5 @@
       "category": "notices"
     }
   ],
-  "syncedAt": "2026-10-29T05:54:19.256Z"
+  "syncedAt": "2026-10-29T06:02:02.520Z"
 }

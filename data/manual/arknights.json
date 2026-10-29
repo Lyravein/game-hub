@@ -88,6 +88,30 @@
       ],
       "url": "https://arknights.global/news/4980",
       "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/22/58t0nscB.png"
+    },
+    {
+      "name": "The Masses' Travels Rerun",
+      "startsAt": "2026-11-05T11:00:00.000Z",
+      "endsAt": "2026-11-15T10:59:59.000Z",
+      "rewards": [
+        "Paganini's Firearms Workshop Furniture",
+        "Intelligence Certificate",
+        "Module Data Block"
+      ],
+      "url": "https://arknights.wiki.gg/wiki/The_Masses'_Travels/Rerun",
+      "image": "https://arknights.wiki.gg/images/CN_The_Masses%27_Travels_Rerun_banner.png?100811"
+    },
+    {
+      "name": "Collab: A Flurry of Sakura and Thunder",
+      "startsAt": "2026-11-15T15:00:00.000Z",
+      "endsAt": "2026-11-29T10:59:59.000Z",
+      "rewards": [
+        "1★ Operator: Palico (Felyne)",
+        "Originite Prime x18",
+        "Collab Furniture Set"
+      ],
+      "url": "https://arknights.wiki.gg/wiki/A_Flurry_of_Sakura_and_Thunder",
+      "image": "/game-hub/art/banners/ak-collab-mizutsune.png"
     }
   ]
 }

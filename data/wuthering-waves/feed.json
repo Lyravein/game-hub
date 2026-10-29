@@ -158,6 +158,17 @@
         "Echo Double Drop"
       ],
       "url": "https://wutheringwaves.kurogames.com/en/main/news/detail/5653"
+    },
+    {
+      "name": "Gifts of Slumberland (7-Day Login)",
+      "image": "/game-hub/art/banners/wuwa-lily.png",
+      "startsAt": "2026-11-11T04:00:00.000Z",
+      "endsAt": "2026-12-02T03:59:00.000Z",
+      "rewards": [
+        "Radiant Tide x5",
+        "Forging Tide x5"
+      ],
+      "url": "https://wutheringwaves.kurogames.com/en/main/news"
     }
   ],
   "news": [
@@ -246,5 +257,5 @@
       "category": "announcement"
     }
   ],
-  "syncedAt": "2026-10-29T05:54:18.558Z"
+  "syncedAt": "2026-10-29T06:02:00.932Z"
 }

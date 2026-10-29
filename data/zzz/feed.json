@@ -104,6 +104,18 @@
       "url": "https://www.hoyolab.com/article/47142378"
     },
     {
+      "name": "Cyber Miracle Healer, on Duty!",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/24/0/969e67f4bb1267bfc91a4179d0b5608d_6657477135455808975.png",
+      "startsAt": "2026-10-28T02:00:00.000Z",
+      "endsAt": "2026-11-16T19:59:00.000Z",
+      "rewards": [
+        "Polychrome x300",
+        "Boopon x2",
+        "Upgrade Materials"
+      ],
+      "url": "https://www.hoyolab.com/article/47208493"
+    },
+    {
       "name": "All-New Program (7-Day Login)",
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/19/f6fa5014416d1c86344d42034bd45f5b_4312829945717390906.png",
       "startsAt": "2026-10-21T03:00:00.000Z",
@@ -124,6 +136,18 @@
         "Dennies x150000"
       ],
       "url": "https://www.hoyolab.com/article/46913357"
+    },
+    {
+      "name": "Repair! Drifting Art",
+      "image": "/game-hub/art/banners/zzz-severian.webp",
+      "startsAt": "2026-11-13T02:00:00.000Z",
+      "endsAt": "2026-12-01T03:59:00.000Z",
+      "rewards": [
+        "Polychrome x300",
+        "Boopon x2",
+        "Dennies x150000"
+      ],
+      "url": "https://www.hoyolab.com/article/47149468"
     }
   ],
   "news": [
@@ -212,5 +236,5 @@
       "category": "announcement"
     }
   ],
-  "syncedAt": "2026-10-29T05:54:13.666Z"
+  "syncedAt": "2026-10-29T06:01:56.332Z"
 }
