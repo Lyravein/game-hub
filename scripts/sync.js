@@ -39,6 +39,44 @@ export function mergeManual(feed, manual) {
   return out
 }
 
+export function pruneExpired(feed, now = Date.now()) {
+  if (!feed || typeof feed !== 'object') return feed
+  const out = structuredClone(feed)
+
+  if (Array.isArray(out.banners)) {
+    out.banners = out.banners.filter(b => {
+      const e = Date.parse(b.endsAt)
+      return Number.isNaN(e) || e > now
+    })
+  }
+
+  if (Array.isArray(out.events)) {
+    out.events = out.events.filter(e => {
+      const end = Date.parse(e.endsAt)
+      return Number.isNaN(end) || end > now
+    })
+  }
+
+  if (out.version?.next?.startsAt) {
+    const nextStart = Date.parse(out.version.next.startsAt)
+    if (!Number.isNaN(nextStart) && nextStart <= now) {
+      if (out.version.next.number && out.version.next.number !== 'TBA') {
+        out.version.current = out.version.next.number
+      }
+      out.version.next = undefined
+    }
+  }
+
+  if (Array.isArray(out.news)) {
+    out.news = out.news
+      .filter(n => !Number.isNaN(Date.parse(n.publishedAt)))
+      .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
+      .slice(0, 20)
+  }
+
+  return out
+}
+
 export async function fetchJson(url) {
   const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS), headers: { 'user-agent': 'game-hub-sync/0.1' } })
   if (!res.ok) throw new Error(`${res.status} ${url}`)
@@ -60,6 +98,7 @@ async function syncOne(game) {
   const mod = await import(`./games/${game.id}.js`)
   let feed = await mod.buildFeed({ fetchJson, fetchText, game })
   feed = mergeManual(feed, loadManual(game.id))
+  feed = pruneExpired(feed)
   const v = validateFeed(feed)
   if (!v.ok) throw new Error('invalid feed: ' + v.errors.join('; '))
   const dest = join(DATA_DIR, game.id, 'feed.json')

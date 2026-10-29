@@ -14,6 +14,22 @@ export default defineEventHandler(() => {
       const feed = JSON.parse(readFileSync(p, 'utf8'))
       const v = validateFeed(feed)
       if (!v.ok) { console.warn(`[api] invalid feed ${g.id}:`, v.errors.join('; ')); continue }
+
+      // In-memory prune: omits ended items immediately without waiting for nightly cron
+      const now = Date.now()
+      if (Array.isArray(feed.banners)) {
+        feed.banners = feed.banners.filter(b => Date.parse(b.endsAt) > now)
+      }
+      if (Array.isArray(feed.events)) {
+        feed.events = feed.events.filter(e => Date.parse(e.endsAt) > now)
+      }
+      if (feed.version?.next?.startsAt && Date.parse(feed.version.next.startsAt) <= now) {
+        if (feed.version.next.number && feed.version.next.number !== 'TBA') {
+          feed.version.current = feed.version.next.number
+        }
+        feed.version.next = undefined
+      }
+
       games.push(feed)
     } catch (e) { console.warn(`[api] unreadable feed ${g.id}:`, e.message) }
   }
