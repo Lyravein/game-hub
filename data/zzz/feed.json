@@ -48,6 +48,42 @@
         "Joyau Dore"
       ],
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/18/0/65a233370b433c1b7d3126ad5155188b_2269549401582863875.png"
+    },
+    {
+      "type": "character",
+      "name": "Answers in the Wind",
+      "startsAt": "2026-11-11T04:00:00.000Z",
+      "endsAt": "2026-12-01T03:59:00.000Z",
+      "featured": [
+        "Severian"
+      ]
+    },
+    {
+      "type": "character",
+      "name": "Outlier of Prodigies",
+      "startsAt": "2026-11-11T04:00:00.000Z",
+      "endsAt": "2026-12-01T03:59:00.000Z",
+      "featured": [
+        "Norma"
+      ]
+    },
+    {
+      "type": "weapon",
+      "name": "Incarcerating Grip",
+      "startsAt": "2026-11-11T04:00:00.000Z",
+      "endsAt": "2026-12-01T03:59:00.000Z",
+      "featured": [
+        "Incarcerating Grip"
+      ]
+    },
+    {
+      "type": "weapon",
+      "name": "Chief Sidekick",
+      "startsAt": "2026-11-11T04:00:00.000Z",
+      "endsAt": "2026-12-01T03:59:00.000Z",
+      "featured": [
+        "Chief Sidekick"
+      ]
     }
   ],
   "events": [
@@ -74,17 +110,26 @@
       "url": "https://www.hoyolab.com/article/47142288"
     },
     {
-      "name": "Data Bounty: Combat Simulation",
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/10/d824455ce95fdb234359203ae02f7164_5515279548304941623.jpg",
-      "startsAt": "2026-10-14T04:00:00.000Z",
-      "endsAt": "2026-10-29T03:59:00.000Z",
+      "name": "Chronicles of the Hobbling Crow",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/25/bcbfe113e368482b715768b810ec680e_1185313513823374146.jpg",
+      "startsAt": "2026-10-25T02:00:00.000Z",
+      "endsAt": "2026-11-18T03:59:00.000Z",
       "rewards": [
-        "Double Material Drops"
+        "Polychrome x300",
+        "Boopon x2",
+        "Dennies x150000"
       ],
-      "url": "https://www.hoyolab.com/article/47055658"
+      "url": "https://www.hoyolab.com/article/46913357"
     }
   ],
   "news": [
+    {
+      "title": "\"Cyber Miracle Healer, on Duty!\" Event Details",
+      "url": "https://www.hoyolab.com/article/47208493",
+      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/24/4a14b3baca5930778df690b667c4a08b_1956262256247911831.png",
+      "publishedAt": "2026-10-26T04:30:07.000Z",
+      "category": "announcement"
+    },
     {
       "title": "Known Issues & Game Optimizations in Version 3.3 (Updating)",
       "url": "https://www.hoyolab.com/article/47150315",
@@ -161,14 +206,7 @@
       "image": "https://upload-os-bbs.hoyolab.com/upload/2026/10/09/7519fb11d551f379b7d9ebd34af0eca9_1111798782624595132.png",
       "publishedAt": "2026-10-10T10:00:02.000Z",
       "category": "announcement"
-    },
-    {
-      "title": "\"Chronicles of the Hobbling Crow\" Event Details",
-      "url": "https://www.hoyolab.com/article/46913357",
-      "image": "https://upload-os-bbs.hoyolab.com/upload/2026/09/25/bcbfe113e368482b715768b810ec680e_1185313513823374146.jpg",
-      "publishedAt": "2026-10-01T04:00:06.000Z",
-      "category": "announcement"
     }
   ],
-  "syncedAt": "2026-10-25T12:27:42.618Z"
+  "syncedAt": "2026-10-29T05:47:50.271Z"
 }
