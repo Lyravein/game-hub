@@ -1,0 +1,90 @@
+{
+  "version": {
+    "current": "Ep 17",
+    "next": {
+      "number": "The Masses' Travels Rerun",
+      "startsAt": "2026-11-05T11:00:00.000Z"
+    }
+  },
+  "banners": [
+    {
+      "type": "character",
+      "name": "Orienteering #7",
+      "startsAt": "2026-10-28T15:00:00.000Z",
+      "endsAt": "2026-11-11T10:59:59.000Z",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/22/gy3AUCUw.png",
+      "featured": [
+        {
+          "name": "Leizi the Thunderbringer",
+          "image": "https://arknights.wiki.gg/images/thumb/Leizi_the_Thunderbringer_icon.png/160px-Leizi_the_Thunderbringer_icon.png?acc84b"
+        },
+        {
+          "name": "Pramanix the Prerita",
+          "image": "https://arknights.wiki.gg/images/thumb/Pramanix_the_Prerita_icon.png/160px-Pramanix_the_Prerita_icon.png?10c8fb"
+        },
+        {
+          "name": "Typhon",
+          "image": "https://arknights.wiki.gg/images/thumb/Typhon_icon.png/160px-Typhon_icon.png?3bf745"
+        },
+        {
+          "name": "Logos",
+          "image": "https://arknights.wiki.gg/images/thumb/Logos_icon.png/160px-Logos_icon.png?667795"
+        },
+        {
+          "name": "Thorns the Lodestar",
+          "image": "https://arknights.wiki.gg/images/thumb/Thorns_the_Lodestar_icon.png/160px-Thorns_the_Lodestar_icon.png?954c16"
+        },
+        {
+          "name": "Penance",
+          "image": "https://arknights.wiki.gg/images/thumb/Penance_icon.png/160px-Penance_icon.png?64aa73"
+        }
+      ]
+    },
+    {
+      "type": "character",
+      "name": "Collab Limited: Violet Mizutsune Orchid",
+      "startsAt": "2026-11-15T15:00:00.000Z",
+      "endsAt": "2026-11-29T10:59:59.000Z",
+      "featured": [
+        {
+          "name": "Violet Mizutsune Orchid",
+          "image": "https://arknights.wiki.gg/images/thumb/Violet_Mizutsune_Orchid_icon.png/160px-Violet_Mizutsune_Orchid_icon.png?367c40"
+        },
+        {
+          "name": "Zinogre S Catapult",
+          "image": "https://arknights.wiki.gg/images/thumb/Zinogre_S_Catapult_icon.png/160px-Zinogre_S_Catapult_icon.png?e012c8"
+        }
+      ]
+    },
+    {
+      "type": "character",
+      "name": "Collab Rerun: Kirin R Yato",
+      "startsAt": "2026-11-29T15:00:00.000Z",
+      "endsAt": "2026-12-13T10:59:59.000Z",
+      "featured": [
+        {
+          "name": "Kirin R Yato",
+          "image": "https://arknights.wiki.gg/images/thumb/Kirin_R_Yato_icon.png/160px-Kirin_R_Yato_icon.png?ae276a"
+        },
+        {
+          "name": "Rathalos S Noir Corne",
+          "image": "https://arknights.wiki.gg/images/thumb/Rathalos_S_Noir_Corne_icon.png/160px-Rathalos_S_Noir_Corne_icon.png?ab8633"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "Reclamation Algorithm [Relaunch Anchor]",
+      "startsAt": "2026-10-23T03:00:00.000Z",
+      "endsAt": "2026-11-25T10:59:59.000Z",
+      "rewards": [
+        "Mountain: The Hardcore Rider",
+        "Themed Background: Relaunch",
+        "Interactable Furniture: Blueprint of Rebuild"
+      ],
+      "url": "https://arknights.global/news/4980",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/22/58t0nscB.png"
+    }
+  ]
+}

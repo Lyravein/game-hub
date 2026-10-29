@@ -11,54 +11,82 @@
   "banners": [
     {
       "type": "character",
-      "name": "Sealed With Time",
-      "startsAt": "2026-10-14T15:00:00.000Z",
-      "endsAt": "2026-10-28T10:59:59.000Z",
-      "featured": [
-        {
-          "name": "Closure",
-          "image": "https://arknights.wiki.gg/images/thumb/Closure_icon.png/160px-Closure_icon.png?e39ed3"
-        },
-        {
-          "name": "Crackborne",
-          "image": "https://arknights.wiki.gg/images/thumb/Crackborne_icon.png/160px-Crackborne_icon.png?7f3a07"
-        },
-        {
-          "name": "Exusiai the New Covenant",
-          "image": "https://arknights.wiki.gg/images/thumb/Exusiai_the_New_Covenant_icon.png/160px-Exusiai_the_New_Covenant_icon.png?ec7dd8"
-        },
-        {
-          "name": "Kal'tsit Esperanta",
-          "image": "https://arknights.wiki.gg/images/thumb/Kal%27tsit_Esperanta_icon.png/160px-Kal%27tsit_Esperanta_icon.png?9e9f69"
-        },
-        {
-          "name": "Lappland the Decadenza",
-          "image": "https://arknights.wiki.gg/images/thumb/Lappland_the_Decadenza_icon.png/160px-Lappland_the_Decadenza_icon.png?3660b4"
-        },
-        {
-          "name": "Wiš'adel",
-          "image": "https://arknights.wiki.gg/images/thumb/Wi%C5%A1%27adel_icon.png/160px-Wi%C5%A1%27adel_icon.png?9f170d"
-        }
-      ],
-      "image": null
-    },
-    {
-      "type": "character",
       "name": "Orienteering #7",
       "startsAt": "2026-10-28T15:00:00.000Z",
       "endsAt": "2026-11-11T10:59:59.000Z",
-      "featured": [],
-      "image": null
+      "featured": [
+        {
+          "name": "Leizi the Thunderbringer",
+          "image": "https://arknights.wiki.gg/images/thumb/Leizi_the_Thunderbringer_icon.png/160px-Leizi_the_Thunderbringer_icon.png?acc84b"
+        },
+        {
+          "name": "Pramanix the Prerita",
+          "image": "https://arknights.wiki.gg/images/thumb/Pramanix_the_Prerita_icon.png/160px-Pramanix_the_Prerita_icon.png?10c8fb"
+        },
+        {
+          "name": "Typhon",
+          "image": "https://arknights.wiki.gg/images/thumb/Typhon_icon.png/160px-Typhon_icon.png?3bf745"
+        },
+        {
+          "name": "Logos",
+          "image": "https://arknights.wiki.gg/images/thumb/Logos_icon.png/160px-Logos_icon.png?667795"
+        },
+        {
+          "name": "Thorns the Lodestar",
+          "image": "https://arknights.wiki.gg/images/thumb/Thorns_the_Lodestar_icon.png/160px-Thorns_the_Lodestar_icon.png?954c16"
+        },
+        {
+          "name": "Penance",
+          "image": "https://arknights.wiki.gg/images/thumb/Penance_icon.png/160px-Penance_icon.png?64aa73"
+        }
+      ],
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/22/gy3AUCUw.png"
+    },
+    {
+      "type": "character",
+      "name": "Collab Limited: Violet Mizutsune Orchid",
+      "startsAt": "2026-11-15T15:00:00.000Z",
+      "endsAt": "2026-11-29T10:59:59.000Z",
+      "featured": [
+        {
+          "name": "Violet Mizutsune Orchid",
+          "image": "https://arknights.wiki.gg/images/thumb/Violet_Mizutsune_Orchid_icon.png/160px-Violet_Mizutsune_Orchid_icon.png?367c40"
+        },
+        {
+          "name": "Zinogre S Catapult",
+          "image": "https://arknights.wiki.gg/images/thumb/Zinogre_S_Catapult_icon.png/160px-Zinogre_S_Catapult_icon.png?e012c8"
+        }
+      ]
+    },
+    {
+      "type": "character",
+      "name": "Collab Rerun: Kirin R Yato",
+      "startsAt": "2026-11-29T15:00:00.000Z",
+      "endsAt": "2026-12-13T10:59:59.000Z",
+      "featured": [
+        {
+          "name": "Kirin R Yato",
+          "image": "https://arknights.wiki.gg/images/thumb/Kirin_R_Yato_icon.png/160px-Kirin_R_Yato_icon.png?ae276a"
+        },
+        {
+          "name": "Rathalos S Noir Corne",
+          "image": "https://arknights.wiki.gg/images/thumb/Rathalos_S_Noir_Corne_icon.png/160px-Rathalos_S_Noir_Corne_icon.png?ab8633"
+        }
+      ]
     }
   ],
   "events": [
     {
-      "name": "Critical Phase Transition",
-      "startsAt": "2026-10-14T12:00:00.000Z",
-      "endsAt": "2026-10-28T10:59:59.000Z",
-      "rewards": [],
-      "url": "",
-      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/09/RPgofnTc.jpg"
+      "name": "Reclamation Algorithm [Relaunch Anchor]",
+      "startsAt": "2026-10-23T03:00:00.000Z",
+      "endsAt": "2026-11-25T10:59:59.000Z",
+      "rewards": [
+        "Mountain: The Hardcore Rider",
+        "Themed Background: Relaunch",
+        "Interactable Furniture: Blueprint of Rebuild"
+      ],
+      "url": "https://arknights.global/news/4980",
+      "image": "https://webusstatic.yo-star.com/web-cms-test/upload/content/2026/10/22/58t0nscB.png"
     }
   ],
   "news": [
@@ -231,5 +259,5 @@
       "category": "event"
     }
   ],
-  "syncedAt": "2026-10-27T08:14:05.566Z"
+  "syncedAt": "2026-10-29T05:42:40.990Z"
 }

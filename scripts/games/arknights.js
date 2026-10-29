@@ -119,7 +119,7 @@ export async function buildFeed({ fetchJson, game }) {
     .filter(p => p?.gachaPoolName && p.openTime && p.endTime)
     .filter(p => p.endTime * 1000 > now && p.endTime - p.openTime < MAX_POOL_DAYS * 86400)
     .filter(p => !SKIP_RULES.has(String(p.gachaRuleType)) && !SKIP_POOL_NAME.test(p.gachaPoolName))
-    .filter(p => !seen.has(p.gachaPoolName.toLowerCase()))
+    .filter(p => !seen.has(p.gachaPoolName.toLowerCase()) && !(/orienteering/i.test(p.gachaPoolName) && Array.from(seen).some(s => s.includes('orienteering'))))
     .map(p => ({
       name: p.gachaPoolName,
       startsAt: new Date(p.openTime * 1000).toISOString(),

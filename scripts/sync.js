@@ -24,9 +24,13 @@ export function mergeManual(feed, manual) {
     if (!out.banners || out.banners.length === 0) {
       out.banners = structuredClone(manual.banners)
     } else {
-      const names = new Set(out.banners.map(b => (b.name || '').toLowerCase()))
+      const byName = new Map(out.banners.map((b, idx) => [(b.name || '').toLowerCase(), idx]))
       for (const mb of manual.banners) {
-        if (!names.has((mb.name || '').toLowerCase())) {
+        const key = (mb.name || '').toLowerCase()
+        if (byName.has(key)) {
+          const idx = byName.get(key)
+          out.banners[idx] = { ...out.banners[idx], ...structuredClone(mb) }
+        } else {
           out.banners.push(structuredClone(mb))
         }
       }
