@@ -82,6 +82,34 @@
       "featured": [
         "Unspoken Rue"
       ]
+    },
+    {
+      "type": "character",
+      "name": "Verdant Sillage: Lily",
+      "image": "https://shop.ldrescdn.com/rms/ld-space/process/img/87910620834340cda3db016fc193db031792857539.png",
+      "startsAt": "2026-11-11T04:00:00.000Z",
+      "endsAt": "2026-12-02T03:59:00.000Z",
+      "featured": [
+        "Lily"
+      ]
+    },
+    {
+      "type": "character",
+      "name": "Sigrika (Rerun)",
+      "startsAt": "2026-11-11T04:00:00.000Z",
+      "endsAt": "2026-12-02T03:59:00.000Z",
+      "featured": [
+        "Sigrika"
+      ]
+    },
+    {
+      "type": "weapon",
+      "name": "Absolute Pulsation: Lullaby",
+      "startsAt": "2026-11-11T04:00:00.000Z",
+      "endsAt": "2026-12-02T03:59:00.000Z",
+      "featured": [
+        "Lullaby"
+      ]
     }
   ],
   "events": [
@@ -215,5 +243,5 @@
       "category": "announcement"
     }
   ],
-  "syncedAt": "2026-10-26T10:27:48.379Z"
+  "syncedAt": "2026-10-29T05:35:37.609Z"
 }
