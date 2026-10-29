@@ -1,7 +1,13 @@
 {
   "gameId": "nte",
   "gameName": "Neverness to Everness (NTE)",
-  "version": {},
+  "version": {
+    "current": "1.4",
+    "next": {
+      "number": "1.5",
+      "startsAt": "2026-11-11T03:00:00.000Z"
+    }
+  },
   "banners": [
     {
       "type": "character",
@@ -20,10 +26,96 @@
       "featured": [
         "Far Side of the Moon"
       ]
+    },
+    {
+      "type": "character",
+      "name": "Elyms",
+      "startsAt": "2026-11-11T03:00:00.000Z",
+      "endsAt": "2026-12-02T21:59:00.000Z",
+      "image": "https://static.wikia.nocookie.net/neverness-to-everness/images/4/48/Elyms_Icon.png",
+      "featured": [
+        "Elyms"
+      ]
+    },
+    {
+      "type": "character",
+      "name": "Shinku (Rerun)",
+      "startsAt": "2026-11-11T03:00:00.000Z",
+      "endsAt": "2026-12-02T21:59:00.000Z",
+      "featured": [
+        "Shinku"
+      ]
+    },
+    {
+      "type": "weapon",
+      "name": "Echoes on Hold",
+      "startsAt": "2026-11-11T03:00:00.000Z",
+      "endsAt": "2026-12-02T21:59:00.000Z",
+      "featured": [
+        "Echoes on Hold"
+      ]
+    },
+    {
+      "type": "character",
+      "name": "Exe",
+      "startsAt": "2026-12-02T03:00:00.000Z",
+      "endsAt": "2026-12-23T21:59:00.000Z",
+      "image": "https://static.wikia.nocookie.net/neverness-to-everness/images/1/1a/Exe_Icon.png",
+      "featured": [
+        "Exe"
+      ]
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "name": "Snap! Golden Crackshot",
+      "startsAt": "2026-10-21T02:00:00.000Z",
+      "endsAt": "2026-11-11T21:59:00.000Z",
+      "rewards": [
+        "Annulith x400",
+        "Gold Dye x2",
+        "Beetle Coin x50000"
+      ],
+      "url": "https://nte.perfectworld.com/en/article/news/gameevent/20260929/264427.html"
+    },
+    {
+      "name": "Puka Lucky Flip",
+      "startsAt": "2026-10-29T02:00:00.000Z",
+      "endsAt": "2026-11-11T21:59:00.000Z",
+      "rewards": [
+        "Annulith x300",
+        "Puka Membership Vouchers"
+      ],
+      "url": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html"
+    },
+    {
+      "name": "Coal Lump's Treasure",
+      "startsAt": "2026-10-08T02:00:00.000Z",
+      "endsAt": "2026-11-11T21:59:00.000Z",
+      "rewards": [
+        "Annulith x600",
+        "Senior Hunter Guide x10"
+      ],
+      "url": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html"
+    },
+    {
+      "name": "Pukaland Travelogue",
+      "startsAt": "2026-09-30T02:00:00.000Z",
+      "endsAt": "2026-11-11T21:59:00.000Z",
+      "rewards": [
+        "Annulith x1000",
+        "Puka Glider Skin"
+      ],
+      "url": "https://nte.perfectworld.com/en/article/news/gamenews/20260929/264409.html"
+    }
+  ],
   "news": [
+    {
+      "title": "Account Action Notice: 2026-10-28 (UTC+8)",
+      "url": "https://nte.perfectworld.com/en/article/news/gamebroad/20261028/264812.html",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "category": "notices"
+    },
     {
       "title": "Server Maintenance Notice: October 21",
       "url": "https://nte.perfectworld.com/en/article/news/gamenews/20261019/264675.html",
@@ -71,13 +163,7 @@
       "url": "https://nte.perfectworld.com/en/article/news/gamebroad/20260921/264250.html",
       "publishedAt": "2026-09-21T00:00:00.000Z",
       "category": "notices"
-    },
-    {
-      "title": "Asia & SEA Server Maintenance Notice: Sept 16",
-      "url": "https://nte.perfectworld.com/en/article/news/gamenews/20260914/264134.html",
-      "publishedAt": "2026-09-15T00:00:00.000Z",
-      "category": "news"
     }
   ],
-  "syncedAt": "2026-10-27T08:51:00.243Z"
+  "syncedAt": "2026-10-29T05:30:35.992Z"
 }
