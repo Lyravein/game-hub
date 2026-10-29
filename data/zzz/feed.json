@@ -52,6 +52,7 @@
     {
       "type": "character",
       "name": "Answers in the Wind",
+      "image": "/game-hub/art/banners/zzz-severian.webp",
       "startsAt": "2026-11-11T04:00:00.000Z",
       "endsAt": "2026-12-01T03:59:00.000Z",
       "featured": [
@@ -61,6 +62,7 @@
     {
       "type": "character",
       "name": "Outlier of Prodigies",
+      "image": "/game-hub/art/banners/zzz-severian.webp",
       "startsAt": "2026-11-11T04:00:00.000Z",
       "endsAt": "2026-12-01T03:59:00.000Z",
       "featured": [
@@ -70,6 +72,7 @@
     {
       "type": "weapon",
       "name": "Incarcerating Grip",
+      "image": "/game-hub/art/banners/zzz-wengine-p2.webp",
       "startsAt": "2026-11-11T04:00:00.000Z",
       "endsAt": "2026-12-01T03:59:00.000Z",
       "featured": [
@@ -79,6 +82,7 @@
     {
       "type": "weapon",
       "name": "Chief Sidekick",
+      "image": "/game-hub/art/banners/zzz-wengine-p2.webp",
       "startsAt": "2026-11-11T04:00:00.000Z",
       "endsAt": "2026-12-01T03:59:00.000Z",
       "featured": [
@@ -208,5 +212,5 @@
       "category": "announcement"
     }
   ],
-  "syncedAt": "2026-10-29T05:47:50.271Z"
+  "syncedAt": "2026-10-29T05:54:13.666Z"
 }

@@ -3,6 +3,7 @@
   "gameName": "Arknights: Endfield",
   "version": {
     "current": "Sanctuary of Ink",
+    "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
     "next": {
       "number": "TBA",
       "startsAt": "2026-11-19T03:59:00.000Z"
@@ -37,7 +38,7 @@
       "featured": [
         "Tangtang"
       ],
-      "image": null
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg"
     },
     {
       "type": "weapon",
@@ -47,7 +48,7 @@
       "featured": [
         "Brigand's Calling (Handcannon)"
       ],
-      "image": null
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/ae4a0d5301f2ecd124be805ebd31d30f.jpg"
     },
     {
       "type": "character",
@@ -72,84 +73,46 @@
   ],
   "events": [
     {
-      "name": "Yuanyuan's Blazing Stoves",
-      "startsAt": "2026-10-15T04:00:00.000Z",
-      "endsAt": "2026-11-19T03:59:00.000Z",
-      "rewards": [
-        "Oroberyl x1000"
-      ],
-      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.0ab0c1.jpg"
-    },
-    {
       "name": "Spirit's Restoration",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
       "startsAt": "2026-10-15T04:00:00.000Z",
       "endsAt": "2026-11-05T03:59:00.000Z",
       "rewards": [
         "Spirit's Restoration HH Permit x5"
-      ],
-      "image": null
-    },
-    {
-      "name": "All the Inky Hues",
-      "startsAt": "2026-10-15T04:00:00.000Z",
-      "endsAt": "2026-11-05T04:00:00.000Z",
-      "rewards": [
-        "Oroberyl x1200"
-      ],
-      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.0952be.jpg"
-    },
-    {
-      "name": "Carly's Verdant Anthology",
-      "startsAt": "2026-10-22T04:00:00.000Z",
-      "endsAt": "2026-11-04T20:00:00.000Z",
-      "rewards": [
-        "Oroberyl x1500"
-      ],
-      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.71776c.jpg"
+      ]
     },
     {
       "name": "Contingency Readiness",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
       "startsAt": "2026-10-28T20:00:00.000Z",
       "endsAt": "2026-11-04T20:00:00.000Z",
-      "rewards": [],
-      "image": null
-    },
-    {
-      "name": "Arena of Games",
-      "startsAt": "2026-10-29T04:00:00.000Z",
-      "endsAt": "2026-11-18T20:00:00.000Z",
-      "rewards": [
-        "Oroberyl x1200"
-      ],
-      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.c59b9f.jpg"
-    },
-    {
-      "name": "New Era for the Myriad Souls",
-      "startsAt": "2026-10-31T04:00:00.000Z",
-      "endsAt": "2026-11-13T20:00:00.000Z",
-      "rewards": [
-        "Oroberyl x300"
-      ],
-      "image": "https://web-static.hg-cdn.com/endfield/webview/_version_briefing/v1d6/assets/imgs/thumbnail.ab83b6.jpg"
+      "rewards": []
     },
     {
       "name": "The Stars Are With Me",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
       "startsAt": "2026-11-05T04:00:00.000Z",
       "endsAt": "2026-11-19T03:59:00.000Z",
       "rewards": [
         "The Stars Are With Me HH Permit x5"
-      ],
-      "image": null
+      ]
     },
     {
       "name": "Sanity Supply",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
       "startsAt": "2026-10-15T04:00:00.000Z",
       "endsAt": "2026-11-19T03:59:00.000Z",
-      "rewards": [],
-      "image": null
+      "rewards": []
     }
   ],
   "news": [
+    {
+      "title": "[Ancestral Spring Flows Anew] RE-Factor Headhunting #1 and [Tender Sprig Issue] RE-Factor Issue #1 Available",
+      "url": "https://endfield.gryphline.com/en-us/news/6179",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261027/0dd466f27796c5fd2d4f5759dbadd83d.png",
+      "publishedAt": "2026-10-28T10:00:00.000Z",
+      "category": "notices"
+    },
     {
       "title": "Arknights: Endfield Steam Client Account Linking Guide",
       "url": "https://endfield.gryphline.com/en-us/news/5206",
@@ -207,13 +170,6 @@
       "category": "notices"
     },
     {
-      "title": "Discord Game Stats Widget Updates",
-      "url": "https://endfield.gryphline.com/en-us/news/8995",
-      "image": "https://web-static.hg-cdn.com/upload/image/20260929/bb6f7295bb70622326428711d1e36134.png",
-      "publishedAt": "2026-10-08T10:30:00.000Z",
-      "category": "news"
-    },
-    {
       "title": "[Sanctuary of Ink] New Version Guide Page Release Details",
       "url": "https://endfield.gryphline.com/en-us/news/5207",
       "image": "https://web-static.hg-cdn.com/upload/image/20260929/ff2c4bbc0c5283e6d1d0dafd92fbf304.png",
@@ -221,5 +177,5 @@
       "category": "notices"
     }
   ],
-  "syncedAt": "2026-10-26T11:38:13.312Z"
+  "syncedAt": "2026-10-29T05:54:14.221Z"
 }

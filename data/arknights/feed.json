@@ -5,7 +5,8 @@
     "current": "Ep 17",
     "next": {
       "number": "The Masses' Travels Rerun",
-      "startsAt": "2026-11-05T11:00:00.000Z"
+      "startsAt": "2026-11-05T11:00:00.000Z",
+      "image": "https://arknights.wiki.gg/images/CN_The_Masses%27_Travels_Rerun_banner.png?100811"
     }
   },
   "banners": [
@@ -45,6 +46,7 @@
     {
       "type": "character",
       "name": "Collab Limited: Violet Mizutsune Orchid",
+      "image": "/game-hub/art/banners/ak-collab-mizutsune.png",
       "startsAt": "2026-11-15T15:00:00.000Z",
       "endsAt": "2026-11-29T10:59:59.000Z",
       "featured": [
@@ -61,6 +63,7 @@
     {
       "type": "character",
       "name": "Collab Rerun: Kirin R Yato",
+      "image": "/game-hub/art/banners/ak-collab-yato.png",
       "startsAt": "2026-11-29T15:00:00.000Z",
       "endsAt": "2026-12-13T10:59:59.000Z",
       "featured": [
@@ -259,5 +262,5 @@
       "category": "event"
     }
   ],
-  "syncedAt": "2026-10-29T05:42:40.990Z"
+  "syncedAt": "2026-10-29T05:54:17.825Z"
 }

@@ -5,7 +5,8 @@
     "current": "1.4",
     "next": {
       "number": "1.5",
-      "startsAt": "2026-11-11T03:00:00.000Z"
+      "startsAt": "2026-11-11T03:00:00.000Z",
+      "image": "/game-hub/art/banners/nte-v15.jpg"
     }
   },
   "banners": [
@@ -32,7 +33,7 @@
       "name": "Elyms",
       "startsAt": "2026-11-11T03:00:00.000Z",
       "endsAt": "2026-12-02T21:59:00.000Z",
-      "image": "https://static.wikia.nocookie.net/neverness-to-everness/images/4/48/Elyms_Icon.png",
+      "image": "/game-hub/art/banners/nte-v15.jpg",
       "featured": [
         "Elyms"
       ]
@@ -42,6 +43,7 @@
       "name": "Shinku (Rerun)",
       "startsAt": "2026-11-11T03:00:00.000Z",
       "endsAt": "2026-12-02T21:59:00.000Z",
+      "image": "/game-hub/art/banners/nte-shinku.webp",
       "featured": [
         "Shinku"
       ]
@@ -51,6 +53,7 @@
       "name": "Echoes on Hold",
       "startsAt": "2026-11-11T03:00:00.000Z",
       "endsAt": "2026-12-02T21:59:00.000Z",
+      "image": "https://cdn.prydwen.gg/images/nte/banners/1789565103265-addb6da0aa400cf15e7a7e9736d1f0ff.webp",
       "featured": [
         "Echoes on Hold"
       ]
@@ -60,7 +63,7 @@
       "name": "Exe",
       "startsAt": "2026-12-02T03:00:00.000Z",
       "endsAt": "2026-12-23T21:59:00.000Z",
-      "image": "https://static.wikia.nocookie.net/neverness-to-everness/images/1/1a/Exe_Icon.png",
+      "image": "/game-hub/art/banners/nte-v15.jpg",
       "featured": [
         "Exe"
       ]
@@ -69,6 +72,7 @@
   "events": [
     {
       "name": "Snap! Golden Crackshot",
+      "image": "/game-hub/art/events/nte-pukaland.png",
       "startsAt": "2026-10-21T02:00:00.000Z",
       "endsAt": "2026-11-11T21:59:00.000Z",
       "rewards": [
@@ -80,6 +84,7 @@
     },
     {
       "name": "Puka Lucky Flip",
+      "image": "/game-hub/art/events/nte-pukaland.png",
       "startsAt": "2026-10-29T02:00:00.000Z",
       "endsAt": "2026-11-11T21:59:00.000Z",
       "rewards": [
@@ -90,6 +95,7 @@
     },
     {
       "name": "Coal Lump's Treasure",
+      "image": "/game-hub/art/events/nte-pukaland.png",
       "startsAt": "2026-10-08T02:00:00.000Z",
       "endsAt": "2026-11-11T21:59:00.000Z",
       "rewards": [
@@ -100,6 +106,7 @@
     },
     {
       "name": "Pukaland Travelogue",
+      "image": "/game-hub/art/events/nte-pukaland.png",
       "startsAt": "2026-09-30T02:00:00.000Z",
       "endsAt": "2026-11-11T21:59:00.000Z",
       "rewards": [
@@ -165,5 +172,5 @@
       "category": "notices"
     }
   ],
-  "syncedAt": "2026-10-29T05:30:35.992Z"
+  "syncedAt": "2026-10-29T05:54:19.256Z"
 }

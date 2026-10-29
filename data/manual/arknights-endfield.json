@@ -1,0 +1,66 @@
+{
+  "version": {
+    "current": "Sanctuary of Ink",
+    "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
+    "next": {
+      "number": "TBA",
+      "startsAt": "2026-11-19T03:59:00.000Z"
+    }
+  },
+  "banners": [
+    {
+      "type": "character",
+      "name": "[Ancestral Spring Flows Anew] RE-Factor Headhunting #1",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
+      "startsAt": "2026-10-29T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "featured": [
+        "Tangtang"
+      ]
+    },
+    {
+      "type": "weapon",
+      "name": "[Tender Sprig Issue] RE-Factor Issue #1",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/ae4a0d5301f2ecd124be805ebd31d30f.jpg",
+      "startsAt": "2026-10-29T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "featured": [
+        "Brigand's Calling (Handcannon)"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "Spirit's Restoration",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
+      "startsAt": "2026-10-15T04:00:00.000Z",
+      "endsAt": "2026-11-05T03:59:00.000Z",
+      "rewards": [
+        "Spirit's Restoration HH Permit x5"
+      ]
+    },
+    {
+      "name": "Contingency Readiness",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
+      "startsAt": "2026-10-28T20:00:00.000Z",
+      "endsAt": "2026-11-04T20:00:00.000Z",
+      "rewards": []
+    },
+    {
+      "name": "The Stars Are With Me",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
+      "startsAt": "2026-11-05T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "rewards": [
+        "The Stars Are With Me HH Permit x5"
+      ]
+    },
+    {
+      "name": "Sanity Supply",
+      "image": "https://web-static.hg-cdn.com/upload/image/20261012/e951ca037ab9b181d08e2bfed7cc9833.jpg",
+      "startsAt": "2026-10-15T04:00:00.000Z",
+      "endsAt": "2026-11-19T03:59:00.000Z",
+      "rewards": []
+    }
+  ]
+}
