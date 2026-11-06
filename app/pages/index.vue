@@ -190,8 +190,8 @@ function onImgError (e) {
         <template v-if="feed">
           <section id="version" class="block">
             <div class="section-header">
-              <h2 class="section-title">Next Version</h2>
-              <span class="section-tag">Schedule</span>
+              <span class="section-tag">01 / Next Version</span>
+              <h2 class="section-title">Next <em>Version</em></h2>
             </div>
             <div
               v-if="feed.version?.next?.startsAt"
@@ -231,8 +231,8 @@ function onImgError (e) {
 
           <section id="banners" class="block">
             <div class="section-header">
-              <h2 class="section-title">Character &amp; Weapon Banners</h2>
-              <span class="section-tag">Gacha</span>
+              <span class="section-tag">02 / Banners</span>
+              <h2 class="section-title">Character &amp; Weapon <em>Banners</em></h2>
             </div>
 
             <div v-for="sec in bannerSections" :key="sec.key" class="banner-group">
@@ -304,8 +304,8 @@ function onImgError (e) {
 
           <section id="events" class="block">
             <div class="section-header">
-              <h2 class="section-title">Events &amp; Activities</h2>
-              <span class="section-tag">Activities</span>
+              <span class="section-tag">03 / Activities</span>
+              <h2 class="section-title">Events &amp; <em>Activities</em></h2>
             </div>
 
             <div v-for="sec in eventSections" :key="sec.key" class="banner-group">
@@ -360,8 +360,8 @@ function onImgError (e) {
 
           <section id="news" class="block">
             <div class="section-header">
-              <h2 class="section-title">Latest Announcements</h2>
-              <span class="section-tag">Official Feed</span>
+              <span class="section-tag">04 / Announcements</span>
+              <h2 class="section-title">Latest <em>Announcements</em></h2>
             </div>
             <div v-if="feed.news.length" class="grid">
               <a
