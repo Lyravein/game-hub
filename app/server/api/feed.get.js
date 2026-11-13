@@ -4,6 +4,7 @@ import { validateFeed } from '../../shared/feed-schema.js'
 import GAMES from '../../../games.config.js'
 
 const DATA_DIR = process.env.DATA_DIR || join(process.cwd(), 'data')
+const FIVE_DAYS_MS = 5 * 24 * 60 * 60 * 1000
 
 export default defineEventHandler(() => {
   const games = []
@@ -13,7 +14,7 @@ export default defineEventHandler(() => {
     try {
       const feed = JSON.parse(readFileSync(p, 'utf8'))
       const v = validateFeed(feed)
-      if (!v.ok) { console.warn(`[api] invalid feed ${g.id}:`, v.errors.join('; ')); continue }
+      if (!v.ok) { console.warn(`[api] invalid feed ${g.id}:`, v.errors.join(';')); continue }
 
       // In-memory prune: omits ended items immediately without waiting for nightly cron
       const now = Date.now()
@@ -22,6 +23,12 @@ export default defineEventHandler(() => {
       }
       if (Array.isArray(feed.events)) {
         feed.events = feed.events.filter(e => Date.parse(e.endsAt) > now)
+      }
+      if (Array.isArray(feed.news)) {
+        feed.news = feed.news.filter(n => {
+          const publishedAt = Date.parse(n.publishedAt)
+          return !Number.isNaN(publishedAt) && now - publishedAt <= FIVE_DAYS_MS
+        })
       }
       if (Array.isArray(feed.redeemCodes)) {
         feed.redeemCodes = feed.redeemCodes.flatMap(code => {

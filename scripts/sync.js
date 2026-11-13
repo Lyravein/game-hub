@@ -3,10 +3,13 @@ import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { validateFeed } from '../app/shared/feed-schema.js'
 import GAMES from '../games.config.js'
+import { extractCardFromImage } from './lib/vision-parser.js'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const DATA_DIR = join(ROOT, 'data')
+const VISION_CACHE_PATH = join(DATA_DIR, '.cache', 'vision-cache.json')
 const FETCH_TIMEOUT_MS = 20000
+const FIVE_DAYS_MS = 5 * 24 * 60 * 60 * 1000
 
 const normalizeRedeemCode = code => typeof code === 'string' ? code.trim().toUpperCase() : ''
 const normalizeRedeemRegion = region => typeof region === 'string' ? region.trim().toLowerCase() : ''
@@ -87,10 +90,7 @@ export function pruneExpired(feed, now = Date.now()) {
   }
 
   if (Array.isArray(out.events)) {
-    out.events = out.events.filter(e => {
-      const end = Date.parse(e.endsAt)
-      return Number.isNaN(end) || end > now
-    })
+    out.events = out.events.filter(e => !e.endsAt || Date.parse(e.endsAt) > now)
   }
 
   if (Array.isArray(out.redeemCodes)) {
@@ -116,7 +116,10 @@ export function pruneExpired(feed, now = Date.now()) {
 
   if (Array.isArray(out.news)) {
     out.news = out.news
-      .filter(n => !Number.isNaN(Date.parse(n.publishedAt)))
+      .filter(n => {
+        const publishedAt = Date.parse(n.publishedAt)
+        return !Number.isNaN(publishedAt) && now - publishedAt <= FIVE_DAYS_MS
+      })
       .sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt))
       .slice(0, 20)
   }
@@ -145,6 +148,40 @@ async function syncOne(game) {
   const mod = await import(`./games/${game.id}.js`)
   let feed = await mod.buildFeed({ fetchJson, fetchText, game })
   feed = mergeManual(feed, loadManual(game.id))
+
+  // Vision AI enrichment: extract banners/events from news images if configured
+  if (process.env.VISION_API_BASE && process.env.VISION_API_KEY && process.env.VISION_MODEL && Array.isArray(feed.news)) {
+    for (const item of feed.news.slice(0, 5)) {
+      if (item.image && typeof item.image === 'string' && item.image.startsWith('http')) {
+        try {
+          const res = await extractCardFromImage({
+            imageUrl: item.image,
+            gameId: game.id,
+            cachePath: VISION_CACHE_PATH
+          })
+          if (res.ok && res.data) {
+            if (Array.isArray(res.data.banners)) {
+              for (const b of res.data.banners) {
+                if (!feed.banners.some(existing => existing.name === b.name)) {
+                  feed.banners.push({ ...b, source: 'vision-extracted', image: item.image })
+                }
+              }
+            }
+            if (Array.isArray(res.data.events)) {
+              for (const ev of res.data.events) {
+                if (!feed.events.some(existing => existing.name === ev.name)) {
+                  feed.events.push({ ...ev, source: 'vision-extracted', image: item.image })
+                }
+              }
+            }
+          }
+        } catch (e) {
+          console.warn(`[sync] vision parse skipped for ${game.id}: ${e.message}`)
+        }
+      }
+    }
+  }
+
   if (feed.redeemSync === undefined && Array.isArray(feed.redeemCodes) && feed.redeemCodes.length > 0) {
     feed.redeemSync = {
       mode: game.id === 'arknights-endfield' ? 'automatic' : 'manual-only',

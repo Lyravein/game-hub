@@ -383,6 +383,9 @@ function onImgError (e) {
                         <div class="card-media-fade"></div>
                         <div class="card-badges">
                           <span class="tag" :class="b.type">{{ b.type }}</span>
+                          <span v-if="b.source === 'vision-extracted'" class="badge badge-vision" title="Extracted from official promo image via Vision AI">
+                            ✦ AI Radar
+                          </span>
                           <span class="badge" :class="sec.key === 'ongoing' ? 'badge-ongoing' : 'badge-upcoming'">
                             {{ sec.title }}
                           </span>
@@ -450,6 +453,9 @@ function onImgError (e) {
                     />
                     <div class="card-media-fade"></div>
                     <div class="card-badges">
+                      <span v-if="e.source === 'vision-extracted'" class="badge badge-vision" title="Extracted from official promo image via Vision AI">
+                        ✦ AI Radar
+                      </span>
                       <span class="badge" :class="sec.key === 'ongoing' ? 'badge-ongoing' : 'badge-upcoming'">
                         {{ sec.title }} Event
                       </span>

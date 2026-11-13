@@ -169,6 +169,13 @@ section.block:first-of-type { padding-top: 1.5rem; }
 .codes-sync.manual .codes-sync-dot, .codes-sync.not-configured .codes-sync-dot { background: var(--blue); box-shadow: 0 0 8px var(--glow); }
 .codes-sync-time { color: var(--muted); }
 .codes-sync-note { color: var(--blue); }
+.badge-vision {
+  background: rgba(159, 198, 242, 0.15) !important;
+  color: #9fc6f2 !important;
+  border: 1px solid rgba(159, 198, 242, 0.4) !important;
+  box-shadow: 0 0 10px rgba(159, 198, 242, 0.15);
+  letter-spacing: 0.05em;
+}
 .codes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 1rem; }
 .code-card { position: relative; min-width: 0; padding: 1.1rem; display: flex; flex-direction: column; gap: 0.9rem; border: 1px solid var(--line); border-radius: 10px; background: radial-gradient(circle at 100% 0, rgba(159, 198, 242, 0.07), transparent 40%), rgba(16, 26, 40, 0.82); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22); overflow: hidden; }
 .code-card::after { content: "✦"; position: absolute; top: 0.55rem; right: 0.75rem; color: rgba(159, 198, 242, 0.22); font-size: 0.9rem; pointer-events: none; }
