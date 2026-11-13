@@ -6,6 +6,10 @@ import GAMES from '../games.config.js'
 import { extractCardFromImage } from './lib/vision-parser.js'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
+const ENV_FILE = join(ROOT, '.env')
+if (existsSync(ENV_FILE)) {
+  try { process.loadEnvFile(ENV_FILE) } catch {}
+}
 const DATA_DIR = join(ROOT, 'data')
 const VISION_CACHE_PATH = join(DATA_DIR, '.cache', 'vision-cache.json')
 const FETCH_TIMEOUT_MS = 20000
