@@ -83,7 +83,20 @@ async function wikiThumbs(fetchJson, names) {
   return map
 }
 
-export async function buildFeed({ fetchJson, game }) {
+export async function buildFeed(args) {
+  try {
+    return await buildFeedUnsafe(args)
+  } catch (e) {
+    console.warn('[arknights] feed fetch or parse failed:', e.message)
+    return {
+      gameId: 'arknights', gameName: args.game.name, version: {},
+      banners: [], events: [], news: [], redeemCodes: [],
+      syncedAt: new Date().toISOString(),
+    }
+  }
+}
+
+async function buildFeedUnsafe({ fetchJson, game }) {
   const [act, gacha, newsRes, wikiEvents, wikiBanners] = await Promise.all([
     fetchJson(`${BASE}/activity_table.json`),
     fetchJson(`${BASE}/gacha_table.json`),
@@ -146,7 +159,7 @@ export async function buildFeed({ fetchJson, game }) {
 
   return {
     gameId: 'arknights', gameName: game.name, version,
-    banners, events, news,
+    banners, events, news, redeemCodes: [],
     syncedAt: new Date().toISOString(),
   }
 }

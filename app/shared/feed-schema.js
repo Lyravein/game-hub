@@ -29,6 +29,44 @@ export function validateFeed(obj) {
       if (!tsOk(n.publishedAt)) errors.push(`news[${i}].publishedAt invalid`);
     });
   }
+  if (obj.redeemCodes !== undefined) {
+    if (!Array.isArray(obj.redeemCodes)) {
+      errors.push('redeemCodes must be an array');
+    } else {
+      obj.redeemCodes.forEach((code, i) => {
+        if (!code || typeof code !== 'object' || Array.isArray(code)) {
+          errors.push(`redeemCodes[${i}] must be an object`);
+          return;
+        }
+        if (typeof code.code !== 'string' || !code.code.trim()) errors.push(`redeemCodes[${i}].code missing`);
+        if (!Array.isArray(code.rewards) || code.rewards.some(reward => typeof reward !== 'string')) {
+          errors.push(`redeemCodes[${i}].rewards must be an array of strings`);
+        }
+        if (!code.source || typeof code.source !== 'object' || Array.isArray(code.source)) {
+          errors.push(`redeemCodes[${i}].source must be an object`);
+        } else {
+          if (typeof code.source.name !== 'string' || !code.source.name.trim()) errors.push(`redeemCodes[${i}].source.name missing`);
+          if (typeof code.source.url !== 'string' || !code.source.url.trim()) errors.push(`redeemCodes[${i}].source.url missing`);
+        }
+        if (code.verifiedAt !== undefined && !tsOk(code.verifiedAt)) errors.push(`redeemCodes[${i}].verifiedAt invalid`);
+        if (code.windows !== undefined) {
+          if (!Array.isArray(code.windows)) {
+            errors.push(`redeemCodes[${i}].windows must be an array`);
+          } else {
+            code.windows.forEach((window, j) => {
+              if (!window || typeof window !== 'object' || Array.isArray(window)) {
+                errors.push(`redeemCodes[${i}].windows[${j}] must be an object`);
+                return;
+              }
+              if (typeof window.region !== 'string' || !window.region.trim()) errors.push(`redeemCodes[${i}].windows[${j}].region missing`);
+              if (window.startsAt !== undefined && !tsOk(window.startsAt)) errors.push(`redeemCodes[${i}].windows[${j}].startsAt invalid`);
+              if (window.expiresAt !== undefined && !tsOk(window.expiresAt)) errors.push(`redeemCodes[${i}].windows[${j}].expiresAt invalid`);
+            });
+          }
+        }
+      });
+    }
+  }
   if (!tsOk(obj.syncedAt)) errors.push('syncedAt invalid');
   if (obj.version !== undefined && typeof obj.version !== 'object') errors.push('version must be an object');
   return { ok: errors.length === 0, errors };

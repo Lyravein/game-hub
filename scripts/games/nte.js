@@ -89,18 +89,24 @@ export async function buildFeed({ game }) {
     fetchText(BANNER_PAGE).catch(() => ''),
   ])
 
-  const seen = new Set()
-  const news = pages
-    .flatMap(html => parseNteNews(html))
-    .filter(n => !seen.has(n.url) && seen.add(n.url))
-    .sort((x, y) => Date.parse(y.publishedAt) - Date.parse(x.publishedAt))
-    .slice(0, 12)
+  let news = []
+  let banners = []
+  try {
+    const seen = new Set()
+    news = pages
+      .flatMap(html => parseNteNews(html))
+      .filter(n => !seen.has(n.url) && seen.add(n.url))
+      .sort((x, y) => Date.parse(y.publishedAt) - Date.parse(x.publishedAt))
+      .slice(0, 12)
 
-  const banners = parseNteBanners(bannerPage).filter(b => Date.parse(b.endsAt) > now)
+    banners = parseNteBanners(bannerPage).filter(b => Date.parse(b.endsAt) > now)
+  } catch (e) {
+    console.warn('[nte] feed parse failed:', e.message)
+  }
 
   return {
     gameId: game.id, gameName: game.name, version: {},
-    banners, events: [], news,
+    banners, events: [], news, redeemCodes: [],
     syncedAt: new Date().toISOString(),
   }
 }

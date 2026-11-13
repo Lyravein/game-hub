@@ -82,6 +82,7 @@ export async function buildFeed({ fetchJson, game }) {
     banners,
     events,
     news,
+    redeemCodes: [],
     syncedAt: new Date().toISOString(),
   }
 }

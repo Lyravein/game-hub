@@ -66,6 +66,126 @@ const eventSections = computed(() => [
   { key: 'upcoming', title: 'Upcoming', items: upcomingEvents.value, empty: 'No upcoming events announced yet.' }
 ])
 
+const redeemCodes = computed(() => {
+  const t = now.value
+  return (feed.value?.redeemCodes || [])
+    .map(code => {
+      const windows = Array.isArray(code.windows) ? code.windows : []
+      const liveWindows = windows.filter(window => {
+        const expiresAt = Date.parse(window?.expiresAt)
+        return Number.isNaN(expiresAt) || expiresAt > t
+      })
+      if (windows.length > 0 && liveWindows.length === 0) return null
+
+      const active = liveWindows.some(window => {
+        const startsAt = Date.parse(window?.startsAt)
+        const expiresAt = Date.parse(window?.expiresAt)
+        return !Number.isNaN(startsAt) && !Number.isNaN(expiresAt) && startsAt <= t && t < expiresAt
+      })
+      const upcoming = liveWindows.some(window => {
+        const startsAt = Date.parse(window?.startsAt)
+        const expiresAt = Date.parse(window?.expiresAt)
+        return !Number.isNaN(startsAt) && !Number.isNaN(expiresAt) && t < startsAt
+      })
+      const regions = [...new Set(liveWindows.map(window => window?.region?.trim()).filter(Boolean))]
+      const status = active ? 'active' : upcoming ? 'upcoming' : 'unverified'
+      const source = code.source || { name: 'Primary source', url: '' }
+      if (!code.code) return null
+      const key = [code.code, source.url, ...regions, code.verifiedAt].join('-')
+      const rewards = Array.isArray(code.rewards) ? code.rewards : []
+      const verifiedAt = code.verifiedAt && !Number.isNaN(Date.parse(code.verifiedAt)) ? fmtDate(code.verifiedAt) : null
+      const statusLabel = { active: 'Active', upcoming: 'Upcoming', unverified: 'Unverified' }[status]
+      return {
+        ...code,
+        status,
+        statusLabel,
+        key,
+        regions,
+        rewards,
+        source,
+        verifiedAt,
+        windows: liveWindows.map(window => ({
+          ...window,
+          timing: redeemWindowTiming(window),
+          dateRange: redeemWindowDates(window)
+        }))
+      }
+    })
+    .filter(Boolean)
+})
+
+const redeemSync = computed(() => feed.value?.redeemSync)
+const redeemSyncState = computed(() => {
+  if (redeemSync.value?.status === 'stale') return 'stale'
+  if (redeemSync.value?.mode === 'manual-only') return 'manual'
+  if (redeemSync.value?.status === 'not-configured') return 'not-configured'
+  if (redeemSync.value?.status === 'ok') return 'ok'
+  return 'unknown'
+})
+const redeemSyncTime = computed(() => {
+  const value = redeemSync.value?.lastSuccessAt
+  return value && !Number.isNaN(Date.parse(value)) ? fmtDate(value) : null
+})
+const feedSyncTime = computed(() => {
+  const value = feed.value?.syncedAt
+  return value && !Number.isNaN(Date.parse(value)) ? fmtDate(value) : null
+})
+
+const copiedCode = ref('')
+let copyResetTimer
+
+async function copyCode (code) {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(code)
+    } else {
+      const textarea = document.createElement('textarea')
+      textarea.value = code
+      textarea.style.position = 'fixed'
+      textarea.style.opacity = '0'
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      textarea.remove()
+    }
+    copiedCode.value = code
+    clearTimeout(copyResetTimer)
+    copyResetTimer = setTimeout(() => { copiedCode.value = '' }, 2000)
+  } catch {
+    copiedCode.value = ''
+  }
+}
+
+onUnmounted(() => clearTimeout(copyResetTimer))
+
+function redeemWindowTiming (window) {
+  const startsAt = Date.parse(window?.startsAt)
+  const expiresAt = Date.parse(window?.expiresAt)
+  const t = now.value
+  if (!Number.isNaN(startsAt) && t < startsAt) return `starts in ${formatDuration(startsAt - t)}`
+  if (!Number.isNaN(expiresAt) && t < expiresAt) return `expires in ${formatDuration(expiresAt - t)}`
+  if (!Number.isNaN(expiresAt)) return `ended ${fmtDate(expiresAt)}`
+  return 'expiry unconfirmed'
+}
+
+function redeemWindowDates (window) {
+  const startsAt = window?.startsAt ? fmtDate(window.startsAt) : null
+  const expiresAt = window?.expiresAt ? fmtDate(window.expiresAt) : null
+  if (startsAt && expiresAt) return `${startsAt} → ${expiresAt}`
+  if (expiresAt) return `Expires ${expiresAt}`
+  if (startsAt) return `Starts ${startsAt}`
+  return 'Expiry date not confirmed'
+}
+
+function formatDuration (ms) {
+  const minutes = Math.max(1, Math.floor(ms / 60000))
+  const days = Math.floor(minutes / 1440)
+  const hours = Math.floor((minutes % 1440) / 60)
+  if (days > 0) return `${days}d`
+  if (hours > 0) return `${hours}h`
+  return `${minutes}m`
+}
+
 function splitByType (list) {
   const characters = list.filter(b => b.type === 'character')
   const weapons = list.filter(b => b.type !== 'character')
@@ -157,6 +277,7 @@ function onImgError (e) {
             <a href="#version" class="nav-link">Version</a>
             <a href="#banners" class="nav-link">Banners</a>
             <a href="#events" class="nav-link">Events</a>
+            <a href="#codes" class="nav-link">Codes</a>
             <a href="#news" class="nav-link">News</a>
             <a href="https://lyravein.my.id/" class="nav-link nav-external" target="_blank" rel="noopener">Portfolio ↗</a>
           </div>
@@ -164,6 +285,9 @@ function onImgError (e) {
       </nav>
 
       <main class="wrap">
+        <div v-if="error" class="feed-error" role="alert">
+          Unable to load game telemetry. Redeem codes could not be refreshed—please try again later.
+        </div>
         <section class="hero">
           <div class="hero-eyebrow">
             <span class="eyebrow-dot"></span>
@@ -187,7 +311,7 @@ function onImgError (e) {
           </div>
         </section>
 
-        <template v-if="feed">
+        <template v-if="feed && !error">
           <section id="version" class="block">
             <div class="section-header">
               <span class="section-tag">01 / Next Version</span>
@@ -358,9 +482,88 @@ function onImgError (e) {
             </div>
           </section>
 
+          <section id="codes" class="block">
+            <div class="section-header">
+              <span class="section-tag">04 / Redeem Codes</span>
+              <h2 class="section-title">Active <em>Redeem Codes</em></h2>
+            </div>
+
+            <div class="codes-sync" :class="redeemSyncState" role="status">
+              <span class="codes-sync-dot" aria-hidden="true"></span>
+              <span v-if="redeemSyncState === 'stale'">Source stale / using fallback data</span>
+              <span v-else-if="redeemSyncState === 'manual'">Community / manual verification</span>
+              <span v-else-if="redeemSyncState === 'not-configured'">Community / manual verification</span>
+              <span v-else-if="redeemSyncState === 'ok'">Redeem source up to date</span>
+              <span v-else>Redeem sync status unavailable</span>
+              <span class="codes-sync-time">
+                · Last sync: {{ redeemSyncTime || feedSyncTime || 'never' }}
+              </span>
+              <span v-if="redeemSyncState === 'manual' || redeemSyncState === 'not-configured'" class="codes-sync-note">
+                · Codes are verified manually
+              </span>
+            </div>
+
+            <div v-if="redeemCodes.length" class="codes-grid">
+              <article v-for="code in redeemCodes" :key="code.key + (code.source?.name || '')" class="code-card">
+                <div class="code-header">
+                  <span class="status-badge" :class="code.status">{{ code.statusLabel }}</span>
+                  <span v-if="code.regions.length" class="code-regions">
+                    <span v-for="region in code.regions" :key="region" class="region-badge">{{ region }}</span>
+                  </span>
+                </div>
+
+                <div class="code-value-row">
+                  <code class="code-value">{{ code.code }}</code>
+                  <button
+                    type="button"
+                    class="code-copy-btn"
+                    :aria-label="`Copy redeem code ${code.code}`"
+                    @click="copyCode(code.code)"
+                  >
+                    {{ copiedCode === code.code ? 'Copied!' : 'Copy' }}
+                  </button>
+                </div>
+
+                <div v-if="code.verifiedAt" class="code-verified">
+                  Verified {{ code.verifiedAt }}
+                </div>
+
+                <div v-if="code.windows.length" class="code-windows">
+                  <div v-for="(window, index) in code.windows" :key="window.region + index" class="code-window">
+                    <span class="code-window-region">{{ window.region || 'Unspecified region' }}</span>
+                    <span class="code-window-timing">{{ window.timing }}</span>
+                    <span class="code-window-dates">{{ window.dateRange }}</span>
+                  </div>
+                </div>
+                <div v-else class="code-window code-window-unverified">
+                  <span>Expiry not confirmed</span>
+                </div>
+
+                <div v-if="code.rewards.length" class="rewards-list" aria-label="Rewards">
+                  <span v-for="reward in code.rewards" :key="reward" class="reward-pill">{{ reward }}</span>
+                </div>
+
+                <a
+                  v-if="code.source?.url"
+                  class="code-source"
+                  :href="code.source.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ code.source.name || 'Primary source' }} ↗
+                </a>
+                <span v-else class="code-source code-source-unverified">Source unavailable</span>
+              </article>
+            </div>
+            <div v-else class="empty-box codes-empty">
+              <span class="empty-icon" aria-hidden="true">✦</span>
+              No active redeem codes right now.
+            </div>
+          </section>
+
           <section id="news" class="block">
             <div class="section-header">
-              <span class="section-tag">04 / Announcements</span>
+              <span class="section-tag">05 / Announcements</span>
               <h2 class="section-title">Latest <em>Announcements</em></h2>
             </div>
             <div v-if="feed.news.length" class="grid">
@@ -396,9 +599,9 @@ function onImgError (e) {
             </div>
           </section>
         </template>
-        <div v-else class="empty-box">
+        <div v-else-if="!error" class="empty-box">
           <span class="empty-icon">✦</span>
-          {{ error ? 'Sync in progress, try again later.' : 'Loading game telemetry...' }}
+          Loading game telemetry...
         </div>
       </main>
 
@@ -416,6 +619,8 @@ function onImgError (e) {
             <a href="#banners">Banners</a>
             <span>·</span>
             <a href="#events">Events</a>
+            <span>·</span>
+            <a href="#codes">Codes</a>
             <span>·</span>
             <a href="#news">News</a>
           </div>

@@ -62,12 +62,13 @@ async function fetchBannersFromAnnouncements({ fetchJson, newsList }) {
 }
 
 export async function buildFeed({ fetchJson, game }) {
-  const news = await fetchNews({ fetchJson, gid: 8 })
+  let news = []
   let banners = []
   try {
+    news = await fetchNews({ fetchJson, gid: 8 })
     banners = await fetchBannersFromAnnouncements({ fetchJson, newsList: news })
   } catch (e) {
-    console.warn('[zzz] auto banner fetch failed:', e.message)
+    console.warn('[zzz] auto feed fetch failed:', e.message)
   }
   return {
     gameId: 'zzz',
@@ -76,6 +77,7 @@ export async function buildFeed({ fetchJson, game }) {
     banners,
     events: [],
     news,
+    redeemCodes: [],
     syncedAt: new Date().toISOString(),
   }
 }

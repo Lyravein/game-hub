@@ -8,6 +8,9 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const DATA_DIR = join(ROOT, 'data')
 const FETCH_TIMEOUT_MS = 20000
 
+const normalizeRedeemCode = code => typeof code === 'string' ? code.trim().toUpperCase() : ''
+const normalizeRedeemRegion = region => typeof region === 'string' ? region.trim().toLowerCase() : ''
+
 export function mergeManual(feed, manual) {
   if (!manual || typeof manual !== 'object') return feed
   const out = structuredClone(feed)
@@ -36,6 +39,39 @@ export function mergeManual(feed, manual) {
       }
     }
   }
+  if (Array.isArray(manual.redeemCodes)) {
+    out.redeemCodes = Array.isArray(out.redeemCodes) ? out.redeemCodes : []
+    const byCode = new Map()
+    out.redeemCodes.forEach((code, index) => byCode.set(normalizeRedeemCode(code?.code), index))
+
+    for (const manualCode of manual.redeemCodes) {
+      const key = normalizeRedeemCode(manualCode?.code)
+      if (!byCode.has(key)) {
+        out.redeemCodes.push(structuredClone(manualCode))
+        byCode.set(key, out.redeemCodes.length - 1)
+        continue
+      }
+
+      const index = byCode.get(key)
+      const automaticCode = out.redeemCodes[index]
+      const mergedCode = { ...automaticCode, ...structuredClone(manualCode) }
+      if (Array.isArray(manualCode?.windows) && manualCode.windows.length > 0) {
+        const byRegion = new Map()
+        if (Array.isArray(automaticCode.windows)) {
+          for (const window of automaticCode.windows) {
+            byRegion.set(normalizeRedeemRegion(window?.region), window)
+          }
+        }
+        for (const window of manualCode.windows) {
+          byRegion.set(normalizeRedeemRegion(window?.region), window)
+        }
+        mergedCode.windows = [...byRegion.values()]
+      } else if (Array.isArray(automaticCode.windows)) {
+        mergedCode.windows = automaticCode.windows
+      }
+      out.redeemCodes[index] = mergedCode
+    }
+  }
   return out
 }
 
@@ -54,6 +90,17 @@ export function pruneExpired(feed, now = Date.now()) {
     out.events = out.events.filter(e => {
       const end = Date.parse(e.endsAt)
       return Number.isNaN(end) || end > now
+    })
+  }
+
+  if (Array.isArray(out.redeemCodes)) {
+    out.redeemCodes = out.redeemCodes.flatMap(code => {
+      if (!Array.isArray(code?.windows) || code.windows.length === 0) return [code]
+      const windows = code.windows.filter(window => {
+        const expiresAt = Date.parse(window?.expiresAt)
+        return Number.isNaN(expiresAt) || expiresAt > now
+      })
+      return windows.length > 0 ? [{ ...code, windows }] : []
     })
   }
 
@@ -98,6 +145,13 @@ async function syncOne(game) {
   const mod = await import(`./games/${game.id}.js`)
   let feed = await mod.buildFeed({ fetchJson, fetchText, game })
   feed = mergeManual(feed, loadManual(game.id))
+  if (feed.redeemSync === undefined && Array.isArray(feed.redeemCodes) && feed.redeemCodes.length > 0) {
+    feed.redeemSync = {
+      mode: game.id === 'arknights-endfield' ? 'automatic' : 'manual-only',
+      status: 'ok',
+      lastSuccessAt: feed.syncedAt
+    }
+  }
   feed = pruneExpired(feed)
   const v = validateFeed(feed)
   if (!v.ok) throw new Error('invalid feed: ' + v.errors.join('; '))

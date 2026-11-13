@@ -23,6 +23,16 @@ export default defineEventHandler(() => {
       if (Array.isArray(feed.events)) {
         feed.events = feed.events.filter(e => Date.parse(e.endsAt) > now)
       }
+      if (Array.isArray(feed.redeemCodes)) {
+        feed.redeemCodes = feed.redeemCodes.flatMap(code => {
+          if (!Array.isArray(code?.windows) || code.windows.length === 0) return [code]
+          const windows = code.windows.filter(window => {
+            const expiresAt = Date.parse(window?.expiresAt)
+            return Number.isNaN(expiresAt) || expiresAt > now
+          })
+          return windows.length > 0 ? [{ ...code, windows }] : []
+        })
+      }
       if (feed.version?.next?.startsAt && Date.parse(feed.version.next.startsAt) <= now) {
         if (feed.version.next.number && feed.version.next.number !== 'TBA') {
           feed.version.current = feed.version.next.number
