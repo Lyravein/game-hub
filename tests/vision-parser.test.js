@@ -29,7 +29,7 @@ test('extractCardFromImage calls OpenAI vision endpoint and returns structured c
     capturedBody = JSON.parse(options.body)
     return {
       ok: true,
-      json: async () => ({
+      text: async () => JSON.stringify({
         choices: [
           {
             message: {
@@ -82,7 +82,7 @@ test('extractCardFromImage uses cache and prevents duplicate fetch calls', async
     fetchCallCount++
     return {
       ok: true,
-      json: async () => ({
+      text: async () => JSON.stringify({
         choices: [
           {
             message: {

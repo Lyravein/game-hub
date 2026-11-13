@@ -101,14 +101,35 @@ No other text, markdown, or explanation.`
       return { ok: false, reason: `http_${res.status}` }
     }
 
-    const payload = await res.json()
+    const raw = typeof res.text === 'function' ? await res.text() : await res.json()
+    const cleanStream = typeof raw === 'string' ? raw.replace(/data:\s*\[DONE\][\s\S]*$/, '').trim() : JSON.stringify(raw)
+    const payload = JSON.parse(cleanStream)
     const content = payload?.choices?.[0]?.message?.content || ''
-    const cleaned = content.replace(/^```json\s*/i, '').replace(/```\s*$/, '').trim()
-    const parsed = JSON.parse(cleaned)
+    const match = content.match(/\{[\s\S]*\}/)
+    if (!match) throw new Error('No JSON object found in response')
+    const parsed = JSON.parse(match[0])
+
+    const isValidIso = str => typeof str === 'string' && !Number.isNaN(Date.parse(str))
+
+    const cleanBanners = (Array.isArray(parsed?.banners) ? parsed.banners : [])
+      .filter(b => b && typeof b.name === 'string' && (b.type === 'character' || b.type === 'weapon'))
+      .map(b => ({
+        ...b,
+        startsAt: isValidIso(b.startsAt) ? new Date(b.startsAt).toISOString() : new Date().toISOString(),
+        endsAt: isValidIso(b.endsAt) ? new Date(b.endsAt).toISOString() : new Date(Date.now() + 14 * 86400000).toISOString()
+      }))
+
+    const cleanEvents = (Array.isArray(parsed?.events) ? parsed.events : [])
+      .filter(e => e && typeof e.name === 'string')
+      .map(e => ({
+        ...e,
+        startsAt: isValidIso(e.startsAt) ? new Date(e.startsAt).toISOString() : new Date().toISOString(),
+        endsAt: isValidIso(e.endsAt) ? new Date(e.endsAt).toISOString() : new Date(Date.now() + 14 * 86400000).toISOString()
+      }))
 
     const resultData = {
-      banners: Array.isArray(parsed?.banners) ? parsed.banners : [],
-      events: Array.isArray(parsed?.events) ? parsed.events : []
+      banners: cleanBanners,
+      events: cleanEvents
     }
 
     if (cachePath) {

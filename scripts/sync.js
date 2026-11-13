@@ -155,7 +155,7 @@ async function syncOne(game) {
 
   // Vision AI enrichment: extract banners/events from news images if configured
   if (process.env.VISION_API_BASE && process.env.VISION_API_KEY && process.env.VISION_MODEL && Array.isArray(feed.news)) {
-    for (const item of feed.news.slice(0, 5)) {
+    for (const item of feed.news.slice(0, 3)) {
       if (item.image && typeof item.image === 'string' && item.image.startsWith('http')) {
         try {
           const res = await extractCardFromImage({
@@ -164,17 +164,22 @@ async function syncOne(game) {
             cachePath: VISION_CACHE_PATH
           })
           if (res.ok && res.data) {
+            const isValidTs = ts => typeof ts === 'string' && !Number.isNaN(Date.parse(ts))
             if (Array.isArray(res.data.banners)) {
               for (const b of res.data.banners) {
-                if (!feed.banners.some(existing => existing.name === b.name)) {
-                  feed.banners.push({ ...b, source: 'vision-extracted', image: item.image })
+                if (b && typeof b.name === 'string' && isValidTs(b.startsAt) && isValidTs(b.endsAt)) {
+                  if (!feed.banners.some(existing => existing.name === b.name)) {
+                    feed.banners.push({ ...b, source: 'vision-extracted', image: item.image })
+                  }
                 }
               }
             }
             if (Array.isArray(res.data.events)) {
               for (const ev of res.data.events) {
-                if (!feed.events.some(existing => existing.name === ev.name)) {
-                  feed.events.push({ ...ev, source: 'vision-extracted', image: item.image })
+                if (ev && typeof ev.name === 'string' && isValidTs(ev.startsAt) && isValidTs(ev.endsAt)) {
+                  if (!feed.events.some(existing => existing.name === ev.name)) {
+                    feed.events.push({ ...ev, source: 'vision-extracted', image: item.image })
+                  }
                 }
               }
             }
